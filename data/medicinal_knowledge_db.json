@@ -1,0 +1,1345 @@
+{
+  "metadata": {
+    "version": "1.0.0",
+    "project": "VTU Major Project: Intelligent Medicinal Plant Recognition Using Hybrid CNN-ViT, XAI, and MCP Knowledge System",
+    "curated_records_count": 11,
+    "authoritative_sources": [
+      "WHO Monographs on Selected Medicinal Plants (Volumes 1-4)",
+      "IMPPAT 3.0: Indian Medicinal Plants, Phytochemistry And Therapeutics",
+      "NIH National Center for Complementary and Integrative Health (NCCIH)",
+      "Ayurvedic Pharmacopoeia of India (API)",
+      "Plants of the World Online (POWO), Royal Botanic Gardens, Kew"
+    ],
+    "last_updated": "2026-11-11"
+  },
+  "species": {
+    "Tulsi": {
+      "taxonomy": {
+        "canonical_name": "Tulsi",
+        "scientific_name": "Ocimum tenuiflorum",
+        "author": "L.",
+        "botanical_family": "Lamiaceae",
+        "synonyms": [
+          "Ocimum sanctum L.",
+          "Lumnitzera tenuiflora (L.) Spreng.",
+          "Plectranthus monachorum (R.Br.) Spreng."
+        ],
+        "vernacular_names": {
+          "english": "Holy Basil",
+          "hindi": "Tulsi",
+          "sanskrit": "Tulasi, Surasa, Vaishnavi, Apetarakshasi",
+          "kannada": "Tulasi, Sri Tulasi",
+          "tamil": "Thulasi"
+        },
+        "taxonomic_serial_number_gbif": "3170258"
+      },
+      "morphology": {
+        "leaves": "Ovate to elliptic, obtuse or acute, serrate or entire margin, pubescent on both surfaces, glandular-punctate containing volatile oil glands, petiolate",
+        "stem": "Quadrangular, branched, woody at base, purplish-green to dark purple pubescence",
+        "flowers": "Verticillaster raceme, purplish to reddish-pink corolla, stamens exserted, bilabiate calyx",
+        "seeds_fruits": "Nutlets subglobose, slightly compressed, rugose, brown to black, mucilaginous when wetted"
+      },
+      "traditional_systems": {
+        "ayurveda": {
+          "rasa": [
+            "Katu (Pungent)",
+            "Tikta (Bitter)"
+          ],
+          "guna": [
+            "Laghu (Light)",
+            "Ruksha (Dry)",
+            "Tikshna (Sharp)"
+          ],
+          "virya": "Ushna (Hot potency / thermogenic)",
+          "vipaka": "Katu (Pungent post-digestive outcome)",
+          "prabhava": "Hridya (Cardiotonic), Vishaghna (Antitoxic/adaptogenic)",
+          "dosha_karma": "Kapha-Vata Shamaka (Alleviates Kapha and Vata), Pitta Vardhaka in excess"
+        },
+        "siddha": {
+          "humoral_quality": "Veppam (Heating)",
+          "therapeutic_indications": [
+            "Irumal (Cough)",
+            "Eraippu (Bronchial asthma)",
+            "Suram (Fever)",
+            "Seriyamai (Indigestion)"
+          ]
+        },
+        "unani": {
+          "mizaj": "Garm-o-Khushk (Hot and Dry, 2nd degree)",
+          "actions": [
+            "Mufarreh (Exhilarant / nervous stimulant)",
+            "Tiryaq (Antidote)",
+            "Munaqqi-e-Seena (Expectorant)"
+          ]
+        }
+      },
+      "clinical_evidence": {
+        "evaluated_indications": [
+          "Metabolic syndrome, fasting hyperglycemia, and insulin sensitivity",
+          "Generalized anxiety disorder and neurocognitive stress reduction",
+          "Upper respiratory tract viral infections and immune modulation",
+          "Periodontal pathogen inhibition and anti-gingivitis efficacy"
+        ],
+        "trial_registries": [
+          {
+            "registry_id": "CTRI/2017/02/007802",
+            "study_design": "Double-blind, randomized, placebo-controlled human trial (n=120)",
+            "dosage_form": "Standardized leaf extract (300 mg bid, containing 5% ursolic acid)",
+            "outcomes": "Statistically significant reduction in fasting blood glucose (-17.6%, p<0.01) and total cholesterol (-11.3%), with improved HOMA-IR index over 12 weeks."
+          },
+          {
+            "registry_id": "NCT01106885",
+            "study_design": "Randomized controlled crossover study on stress attenuation (n=84)",
+            "dosage_form": "Whole herb aqueous extract 400 mg daily",
+            "outcomes": "39% mean reduction in generalized anxiety Hamilton Anxiety Rating Scale (HAM-A) scores; salivary cortisol dropped significantly (p=0.004) compared to placebo."
+          }
+        ],
+        "evidence_grading": "Grade B (Moderate human clinical evidence for adaptogenic, metabolic, and periodontal indications; larger multi-center cohorts recommended)."
+      },
+      "phytochemistry": {
+        "primary_bioactives": [
+          {
+            "compound": "Eugenol",
+            "class": "Phenylpropanoid",
+            "fraction": "Volatile oil (60-70%)"
+          },
+          {
+            "compound": "Ursolic acid",
+            "class": "Pentacyclic triterpenoid",
+            "fraction": "Leaf surface wax (0.8-1.5%)"
+          },
+          {
+            "compound": "Rosmarinic acid",
+            "class": "Phenolic ester",
+            "fraction": "Aqueous fraction"
+          },
+          {
+            "compound": "Beta-caryophyllene",
+            "class": "Sesquiterpene",
+            "fraction": "Essential oil (15-20%)"
+          },
+          {
+            "compound": "Apigenin",
+            "class": "Flavone",
+            "fraction": "Ethanolic extract"
+          }
+        ]
+      },
+      "safety_and_contraindications": {
+        "adverse_effects": "Generally well-tolerated at therapeutic dosages; mild gastrointestinal discomfort or nausea reported in <1.5% of subjects at high doses (>2 g/day).",
+        "pregnancy_lactation_precautions": "Caution advised during pregnancy and lactation; traditional emmenagogue reputation and animal anti-implantation observations suggest avoiding concentrated extracts.",
+        "herb_drug_interactions": [
+          "May augment anticoagulant / antiplatelet drugs (aspirin, clopidogrel, warfarin) due to eugenol-mediated platelet aggregation inhibition.",
+          "Potential synergistic hypoglycemia when co-administered with oral sulfonylureas or insulin; glycemic monitoring advised."
+        ],
+        "clinical_evidence_limitations": "Existing clinical trials have limited sample sizes (<150 participants) and predominantly 8 to 12-week durations."
+      }
+    },
+    "Aloe_Vera": {
+      "taxonomy": {
+        "canonical_name": "Aloe_Vera",
+        "scientific_name": "Aloe vera",
+        "author": "(L.) Burm.f.",
+        "botanical_family": "Asphodelaceae",
+        "synonyms": [
+          "Aloe barbadensis Mill.",
+          "Aloe vulgaris Lam.",
+          "Aloe perfoliata var. vera L."
+        ],
+        "vernacular_names": {
+          "english": "Aloe Vera, Barbados Aloe, Medicinal Aloe",
+          "hindi": "Ghritkumari, Gwarpatha",
+          "sanskrit": "Ghritakumari, Kumari, Kanya, Vipulasrava",
+          "kannada": "Kalabande",
+          "tamil": "Kattralai"
+        },
+        "taxonomic_serial_number_gbif": "2777724"
+      },
+      "morphology": {
+        "leaves": "Succulent, sessile, densely clustered in a rosette, lanceolate, 40-60 cm long, margin armed with cartilaginous pale deltoid spines, inner colorless mucilaginous parenchyma gel, pericyclic anthraquinone-rich bitter yellow latex",
+        "stem": "Acaulescent or short-stemmed stout trunk up to 30 cm",
+        "flowers": "Dense cylindrical raceme on scape up to 90 cm, pendulous yellow-orange tubular perianth",
+        "seeds_fruits": "Triangular locular capsule containing winged seeds"
+      },
+      "traditional_systems": {
+        "ayurveda": {
+          "rasa": [
+            "Tikta (Bitter)",
+            "Madhura (Sweet)"
+          ],
+          "guna": [
+            "Guru (Heavy)",
+            "Snigdha (Unctuous)",
+            "Picchila (Slimy)"
+          ],
+          "virya": "Sheeta (Cold potency / refrigerant)",
+          "vipaka": "Madhura (Sweet post-digestive outcome)",
+          "prabhava": "Rasayana (Rejuvenative), Vranaropana (Wound healing), Chakshushya (Ophthalmic)",
+          "dosha_karma": "Tridosha Shamaka (Balancing to all three doshas, especially Pitta-Kapha)"
+        },
+        "siddha": {
+          "humoral_quality": "Seetham (Cooling)",
+          "therapeutic_indications": [
+            "Kanthal (Burning micturition)",
+            "Gunmam (Peptic ulceration)",
+            "Thol Noigal (Cutaneous disorders)"
+          ]
+        },
+        "unani": {
+          "mizaj": "Sard-o-Tar (Cold and Moist - inner gel); Garm-o-Khushk (Hot and Dry - dried latex / Sibr)",
+          "actions": [
+            "Mus-hil (Drastic purgative - latex)",
+            "Mudammil (Cicatrizing/healing - gel)",
+            "Mubarrid (Refrigerant)"
+          ]
+        }
+      },
+      "clinical_evidence": {
+        "evaluated_indications": [
+          "Superficial second-degree thermal burns and radiation dermatitis",
+          "Accelerated wound epithelialization and surgical scar management",
+          "Impaired fasting glucose and pre-diabetic lipid modulation",
+          "Oral lichen planus and recurrent aphthous stomatitis"
+        ],
+        "trial_registries": [
+          {
+            "registry_id": "NCT00223015",
+            "study_design": "Randomized, active-controlled, comparative trial on burn wound healing (n=50)",
+            "dosage_form": "Topical 98% pure stabilized inner fillet leaf gel applied bid",
+            "outcomes": "Mean healing time in Aloe vera group was 15.7 days vs 21.2 days for 1% silver sulfadiazine cream (p<0.001); significantly lower pain and infection rates."
+          },
+          {
+            "registry_id": "IRCT2014020916535N1",
+            "study_design": "Triple-blind randomized placebo-controlled trial in pre-diabetes (n=72)",
+            "dosage_form": "Oral freeze-dried inner leaf gel powder (300 mg bid)",
+            "outcomes": "Fasting blood glucose reduced by 15.4 mg/dL and HbA1c reduced by 0.4% compared to baseline (p=0.008); significant drop in LDL-C."
+          }
+        ],
+        "evidence_grading": "Grade A for topical burn and wound epithelialization; Grade B for oral pre-diabetic glycemic modulation."
+      },
+      "phytochemistry": {
+        "primary_bioactives": [
+          {
+            "compound": "Acemannan",
+            "class": "Beta-(1,4)-acetylated polymannose",
+            "fraction": "Inner fillet mucilage (major polysaccharide)"
+          },
+          {
+            "compound": "Aloin A & B (Barbaloin)",
+            "class": "Anthrone C-glycoside",
+            "fraction": "Pericyclic leaf latex (15-30%)"
+          },
+          {
+            "compound": "Aloe-emodin",
+            "class": "Anthraquinone",
+            "fraction": "Latex aglycone"
+          },
+          {
+            "compound": "Aloesin",
+            "class": "Chromone glucoside",
+            "fraction": "Inner rind extract"
+          },
+          {
+            "compound": "Bradykinase",
+            "class": "Proteolytic enzyme",
+            "fraction": "Gel fraction"
+          }
+        ]
+      },
+      "safety_and_contraindications": {
+        "adverse_effects": "Pure inner gel is non-toxic topically; unpurified latex causes intense abdominal cramping, tenesmus, and hypokalemia through active catharsis.",
+        "pregnancy_lactation_precautions": "Oral aloe latex is ABSOLUTELY CONTRAINDICATED in pregnancy (potent emmenagogue / oxytocic stimulant inducing uterine contraction) and lactation (aloin excretion into breast milk).",
+        "herb_drug_interactions": [
+          "Prolonged oral latex ingestion depletes potassium, exacerbating digoxin toxicity and increasing arrhythmia risk with antiarrhythmic drugs.",
+          "Concurrent use with thiazide diuretics or corticosteroids exacerbates hypokalemia."
+        ],
+        "clinical_evidence_limitations": "Commercially marketed aloe products vary widely in polysaccharide molecular weight and aloin decolorization standards."
+      }
+    },
+    "Ginger": {
+      "taxonomy": {
+        "canonical_name": "Ginger",
+        "scientific_name": "Zingiber officinale",
+        "author": "Roscoe",
+        "botanical_family": "Zingiberaceae",
+        "synonyms": [
+          "Amomum zingiber L.",
+          "Zingiber blancoi Hassk.",
+          "Curcuma longifolia Wall."
+        ],
+        "vernacular_names": {
+          "english": "Ginger",
+          "hindi": "Adrak (Fresh), Saunth (Dried)",
+          "sanskrit": "Ardraka (Fresh), Shunthi (Dried), Vishvabheshaja, Nagara",
+          "kannada": "Shunti, Alla",
+          "tamil": "Inji (Fresh), Sukku (Dried)"
+        },
+        "taxonomic_serial_number_gbif": "2757279"
+      },
+      "morphology": {
+        "leaves": "Distichous, linear-lanceolate, subsessile, acuminate, 15-25 cm long, sheathing base with scarious ligule",
+        "stem": "Pseudostem formed by tightly overlapping leaf sheaths, 60-120 cm high",
+        "rhizome": "Horizontally branching compressed sympodial rhizome, buff-colored outer cork, pale yellow fibrous interior with distinct aromatic pungent odor",
+        "flowers": "Spike dense, oblong-ovoid, on radical scape, bracts green with yellow margin, corolla lip dark purple with yellow spots"
+      },
+      "traditional_systems": {
+        "ayurveda": {
+          "rasa": [
+            "Katu (Pungent)"
+          ],
+          "guna": [
+            "Laghu (Light - Shunthi)",
+            "Snigdha (Unctuous - Shunthi)",
+            "Guru, Tikshna (Fresh Ardraka)"
+          ],
+          "virya": "Ushna (Hot potency)",
+          "vipaka": "Madhura (Sweet post-digestive outcome)",
+          "prabhava": "Deepana-Pachana (Digestive fire enhancer and toxin metabolizer), Hridya",
+          "dosha_karma": "Vata-Kapha Shamaka (Alleviates Vata and Kapha), does not aggravate Pitta excessively due to sweet Vipaka"
+        },
+        "siddha": {
+          "humoral_quality": "Veppam (Heating)",
+          "therapeutic_indications": [
+            "Ajeeranam (Dyspepsia)",
+            "Vaandhi (Emesis)",
+            "Mugavatham (Facial palsy)",
+            "Keelvatham (Arthritis)"
+          ]
+        },
+        "unani": {
+          "mizaj": "Garm 3rd degree, Khushk 2nd degree",
+          "actions": [
+            "Hazim (Digestive)",
+            "Kasir-e-Riyah (Carminative)",
+            "Muqawwi-e-Bah (Aphrodisiac)"
+          ]
+        }
+      },
+      "clinical_evidence": {
+        "evaluated_indications": [
+          "Chemotherapy-induced nausea and vomiting (CINV)",
+          "Pregnancy-induced nausea and hyperemesis gravidarum",
+          "Postoperative nausea and motion sickness prevention",
+          "Osteoarthritis joint pain and inflammatory biomarker reduction"
+        ],
+        "trial_registries": [
+          {
+            "registry_id": "NCT00929708",
+            "study_design": "Multi-center, randomized, double-blind placebo-controlled clinical trial (n=576)",
+            "dosage_form": "Standardized ginger root capsule (250 mg qid equivalent to 1 g/day)",
+            "outcomes": "Statistically significant reduction (40% vs placebo, p=0.003) in acute chemotherapy nausea on Day 1 when adjunct to 5-HT3 receptor antagonists."
+          },
+          {
+            "registry_id": "IRCT201103035955N1",
+            "study_design": "Randomized double-blind crossover study in knee osteoarthritis (n=120)",
+            "dosage_form": "Standardized ginger extract (500 mg bid containing 5% gingerols)",
+            "outcomes": "Significant reduction in visual analogue scale (VAS) pain scores and WOMAC index (p<0.001); drop in serum nitric oxide and hs-CRP."
+          }
+        ],
+        "evidence_grading": "Grade A for anti-emetic actions (pregnancy, motion, CINV); Grade B for osteoarthritis pain."
+      },
+      "phytochemistry": {
+        "primary_bioactives": [
+          {
+            "compound": "6-Gingerol",
+            "class": "Gingerol pungent phenylalkylketone",
+            "fraction": "Fresh rhizome oleoresin (1-3%)"
+          },
+          {
+            "compound": "6-Shogaol",
+            "class": "Dehydrated gingerol derivative",
+            "fraction": "Dried rhizome / thermally processed"
+          },
+          {
+            "compound": "8-Gingerol & 10-Gingerol",
+            "class": "Gingerol homologues",
+            "fraction": "Oleoresin fraction"
+          },
+          {
+            "compound": "Zingiberene",
+            "class": "Monocyclic sesquiterpene",
+            "fraction": "Essential oil (30-45%)"
+          },
+          {
+            "compound": "Beta-sesquiphellandrene",
+            "class": "Sesquiterpene",
+            "fraction": "Volatile oil (15%)"
+          }
+        ]
+      },
+      "safety_and_contraindications": {
+        "adverse_effects": "Mild heartburn, belching, and oral irritation at daily dosages exceeding 4 g.",
+        "pregnancy_lactation_precautions": "Considered safe in pregnancy for gestational nausea up to 1,000 mg/day under clinical guidance; avoid high therapeutic doses (>2 g/day) due to hypothetical uterine tone stimulation.",
+        "herb_drug_interactions": [
+          "Additive antiplatelet action with warfarin, heparin, or clopidogrel; monitor coagulation parameters during prolonged high-dose use.",
+          "Possible calcium channel blocking action in animal models; monitor blood pressure when combined with verapamil or nifedipine."
+        ],
+        "clinical_evidence_limitations": "Variability in ratio of gingerols to shogaols between dried versus fresh preparations across clinical trials."
+      }
+    },
+    "Neem": {
+      "taxonomy": {
+        "canonical_name": "Neem",
+        "scientific_name": "Azadirachta indica",
+        "author": "A.Juss.",
+        "botanical_family": "Meliaceae",
+        "synonyms": [
+          "Melia azadirachta L.",
+          "Antelaea azadirachta (L.) Adelb."
+        ],
+        "vernacular_names": {
+          "english": "Neem, Margosa Tree, Indian Lilac",
+          "hindi": "Neem, Nimb",
+          "sanskrit": "Nimba, Arishta, Pichumarda, Sarvatobhadra",
+          "kannada": "Bevu, Olle bevu",
+          "tamil": "Veppai, Vepurukku"
+        },
+        "taxonomic_serial_number_gbif": "3190474"
+      },
+      "morphology": {
+        "leaves": "Imparipinnate, alternate, 20-40 cm long, leaflets 9-17, subopposite, lanceolate to falcate, acutely serrate margins, strongly asymmetric base, glabrous, bright green",
+        "bark": "Deeply longitudinally fissured, rough, dark grayish-brown, fibrous pinkish-red inner bark",
+        "flowers": "White, fragrant, arranged in axillary drooping panicles up to 30 cm long",
+        "seeds_fruits": "Ellipsoidal glabrous 1-seeded drupe, 1.5-2 cm long, greenish-yellow when ripe with sweetish mucilaginous pulp enclosing oily white seed"
+      },
+      "traditional_systems": {
+        "ayurveda": {
+          "rasa": [
+            "Tikta (Bitter)",
+            "Kashaya (Astringent)"
+          ],
+          "guna": [
+            "Laghu (Light)",
+            "Ruksha (Dry)"
+          ],
+          "virya": "Sheeta (Cold potency)",
+          "vipaka": "Katu (Pungent post-digestive outcome)",
+          "prabhava": "Krimighna (Antiparasitic), Kushtaghna (Anti-dermatosis), Vranashodhana (Wound purifier)",
+          "dosha_karma": "Pitta-Kapha Shamaka (Pacifies elevated Pitta and Kapha), enhances Vata in excess"
+        },
+        "siddha": {
+          "humoral_quality": "Kaarppu / Kaippu (Pungent/Bitter)",
+          "therapeutic_indications": [
+            "Kutta Noigal (Skin dermatoses)",
+            "Ammai (Viral eruptive fevers)",
+            "Krimi (Intestinal worms)"
+          ]
+        },
+        "unani": {
+          "mizaj": "Garm-o-Khushk (Hot and Dry in 1st degree)",
+          "actions": [
+            "Musaffi-e-Dam (Blood purifier)",
+            "Dafe-Ta’affun (Antiseptic)",
+            "Qatil-e-Deedan (Anthelmintic)"
+          ]
+        }
+      },
+      "clinical_evidence": {
+        "evaluated_indications": [
+          "Dental plaque accumulation and gingival inflammation reduction",
+          "Plaque psoriasis and inflammatory eczema symptom management",
+          "Gastric hyperacidity and gastroduodenal mucosal protection",
+          "Topical head lice (pediculosis humanus capitis) and fungal dermatophytosis"
+        ],
+        "trial_registries": [
+          {
+            "registry_id": "CTRI/2019/04/018765",
+            "study_design": "Single-blind, randomized comparative trial on oral gingivitis (n=90)",
+            "dosage_form": "0.19% standardized aqueous neem bark extract mouthwash (15 mL bid)",
+            "outcomes": "Demonstrated non-inferiority to 0.2% chlorhexidine gluconate in reducing Plaque Index (PI) and Gingival Index (GI) over 28 days without causing extrinsic dental staining."
+          },
+          {
+            "registry_id": "NCT03348254",
+            "study_design": "Randomized vehicle-controlled human trial in mild-to-moderate plaque psoriasis (n=60)",
+            "dosage_form": "Topical 5% standardized neem leaf extract ointment applied bid",
+            "outcomes": "Mean reduction of 54% in Psoriasis Area and Severity Index (PASI) score over 12 weeks with zero contact sensitization."
+          }
+        ],
+        "evidence_grading": "Grade B for anti-gingivitis and dental plaque suppression; Grade B- for topical psoriasis and dermatophytosis."
+      },
+      "phytochemistry": {
+        "primary_bioactives": [
+          {
+            "compound": "Azadirachtin",
+            "class": "Tetranortriterpenoid limonoid",
+            "fraction": "Seed kernels (0.2-0.6%)"
+          },
+          {
+            "compound": "Nimbin",
+            "class": "Modified triterpene",
+            "fraction": "Bark and seed oil"
+          },
+          {
+            "compound": "Nimbidin",
+            "class": "Sulphur-containing triterpenoid bitter",
+            "fraction": "Seed oil (major anti-inflammatory fraction)"
+          },
+          {
+            "compound": "Gedunin",
+            "class": "Limonoid aglycone",
+            "fraction": "Bark and leaf"
+          },
+          {
+            "compound": "Quercetin-3-rutinoside",
+            "class": "Flavonoid",
+            "fraction": "Leaf extract"
+          }
+        ]
+      },
+      "safety_and_contraindications": {
+        "adverse_effects": "Neem oil internally is toxic to neonates/infants (induces Reye-like metabolic acidosis, vomiting, seizures); leaf infusions generally safe at moderate therapeutic adult dosages.",
+        "pregnancy_lactation_precautions": "CONTRAINDICATED in pregnancy and in couples attempting conception; documented anti-implantation, abortifacient, and spermicidal properties.",
+        "herb_drug_interactions": [
+          "Additive hypoglycemia with oral antidiabetic agents (metformin, glipizide); monitor blood sugar.",
+          "Possible theoretical stimulation of autoimmune disorders; exercise caution in multiple sclerosis, SLE, or rheumatoid arthritis."
+        ],
+        "clinical_evidence_limitations": "Lack of standardized marker compound specifications (azadirachtin vs nimbin) across historical dermatological trials."
+      }
+    },
+    "Turmeric": {
+      "taxonomy": {
+        "canonical_name": "Turmeric",
+        "scientific_name": "Curcuma longa",
+        "author": "L.",
+        "botanical_family": "Zingiberaceae",
+        "synonyms": [
+          "Curcuma domestica Valeton",
+          "Amomum curcuma Jacq.",
+          "Curcuma rotunda L."
+        ],
+        "vernacular_names": {
+          "english": "Turmeric, Indian Saffron",
+          "hindi": "Haldi",
+          "sanskrit": "Haridra, Nisha, Kanchani, Krimighna, Yoshitpriya",
+          "kannada": "Arisina",
+          "tamil": "Manjal"
+        },
+        "taxonomic_serial_number_gbif": "2757623"
+      },
+      "morphology": {
+        "leaves": "Large, oblong-lanceolate, acuminate, 70-100 cm long, glabrous, bright green, petiole long and channeled, pinnate secondary venation",
+        "stem": "Short stem surrounded by tightly bladed sheaths",
+        "rhizome": "Tuberous sympodial rhizome, ovate primary mother rhizome with cylindrical oblong lateral branches (fingers), bright orange-yellow core, segmented annulate rings",
+        "flowers": "Spike cylindrical, apical greenish-white to pinkish bracts, corolla pale yellow"
+      },
+      "traditional_systems": {
+        "ayurveda": {
+          "rasa": [
+            "Tikta (Bitter)",
+            "Katu (Pungent)"
+          ],
+          "guna": [
+            "Ruksha (Dry)",
+            "Laghu (Light)"
+          ],
+          "virya": "Ushna (Hot potency)",
+          "vipaka": "Katu (Pungent post-digestive outcome)",
+          "prabhava": "Varnya (Complexion enhancer), Vishaghna (Detoxifier), Kushtaghna",
+          "dosha_karma": "Kapha-Vata Shamaka, Pitta Rechaka (Stimulates bile flow without inflaming Pitta)"
+        },
+        "siddha": {
+          "humoral_quality": "Veppam (Heating)",
+          "therapeutic_indications": [
+            "Keela Kattu (Arthritis)",
+            "Thol Noigal (Dermatosis)",
+            "Seruma Noigal (Respiratory congestion)"
+          ]
+        },
+        "unani": {
+          "mizaj": "Garm-o-Khushk (Hot and Dry in 2nd degree)",
+          "actions": [
+            "Muhallil-e-Waram (Resolvent of inflammation)",
+            "Musaffi-e-Dam (Blood purifier)",
+            "Mudammil-e-Qurooh (Cicatrizing)"
+          ]
+        }
+      },
+      "clinical_evidence": {
+        "evaluated_indications": [
+          "Knee osteoarthritis pain, stiffness, and joint mobility",
+          "Metabolic syndrome, non-alcoholic fatty liver disease (NAFLD), and hyperlipidemia",
+          "Ulcerative colitis remission maintenance adjunct therapy",
+          "Major depressive disorder adjunct therapy"
+        ],
+        "trial_registries": [
+          {
+            "registry_id": "CTRI/2018/07/014902",
+            "study_design": "Randomized, active-controlled, multicenter clinical trial in knee osteoarthritis (n=140)",
+            "dosage_form": "Bioenhanced curcumin complex (BCM-95, 500 mg bid standardized to 95% curcuminoids)",
+            "outcomes": "Demonstrated non-inferiority to ibuprofen 400 mg tid on WOMAC pain and physical function indices at 12 weeks, with zero reported gastrointestinal bleeding events."
+          },
+          {
+            "registry_id": "NCT00114725",
+            "study_design": "Double-blind, randomized, placebo-controlled trial in quiescent ulcerative colitis (n=89)",
+            "dosage_form": "Curcumin 1 g bid alongside baseline mesalamine / sulfasalazine",
+            "outcomes": "Relapse rate over 6 months was significantly lower in curcumin group (4.65%) compared to placebo (20.51%, p=0.04)."
+          }
+        ],
+        "evidence_grading": "Grade A for knee osteoarthritis symptom relief; Grade B for ulcerative colitis maintenance and metabolic syndrome."
+      },
+      "phytochemistry": {
+        "primary_bioactives": [
+          {
+            "compound": "Curcumin (Diferuloylmethane)",
+            "class": "Curcuminoid diarylheptanoid",
+            "fraction": "Rhizome (60-70% of total curcuminoids)"
+          },
+          {
+            "compound": "Demethoxycurcumin",
+            "class": "Curcuminoid",
+            "fraction": "Rhizome (20-27%)"
+          },
+          {
+            "compound": "Bisdemethoxycurcumin",
+            "class": "Curcuminoid",
+            "fraction": "Rhizome (5-15%)"
+          },
+          {
+            "compound": "Ar-turmerone",
+            "class": "Sesquiterpene ketone",
+            "fraction": "Essential oil (30-50%)"
+          },
+          {
+            "compound": "Curlone & Zingiberene",
+            "class": "Volatile terpenes",
+            "fraction": "Essential oil fraction"
+          }
+        ]
+      },
+      "safety_and_contraindications": {
+        "adverse_effects": "Well-tolerated up to 8 g/day in phase 1 human escalation trials; mild diarrhea, nausea, or abdominal distention at high doses.",
+        "pregnancy_lactation_precautions": "Culinary amounts safe; high therapeutic supplemental doses contraindicated in pregnancy due to uterine stimulatory potential.",
+        "herb_drug_interactions": [
+          "Contraindicated in biliary tract obstruction and acute symptomatic gallstones (causes gallbladder contraction).",
+          "Concomitant piperine/bioperine dramatically enhances bioavailability (>2000%) which may alter hepatic CYP450 drug clearance."
+        ],
+        "clinical_evidence_limitations": "Low oral bioavailability of unformulated native curcumin necessitated bioenhancement formulations (phospholipids, nanoparticles) which differ in pharmacokinetics."
+      }
+    },
+    "Ashwagandha": {
+      "taxonomy": {
+        "canonical_name": "Ashwagandha",
+        "scientific_name": "Withania somnifera",
+        "author": "(L.) Dunal",
+        "botanical_family": "Solanaceae",
+        "synonyms": [
+          "Physalis somnifera L.",
+          "Withania kansuensis Kuang & A.M.Lu"
+        ],
+        "vernacular_names": {
+          "english": "Winter Cherry, Indian Ginseng",
+          "hindi": "Ashwagandha, Asgandh",
+          "sanskrit": "Ashwagandha, Varahakarni, Balada, Vajigandha",
+          "kannada": "Ashwagandhi, Vajeegandhi",
+          "tamil": "Amukkuram, Asuvagandi"
+        },
+        "taxonomic_serial_number_gbif": "2932944"
+      },
+      "morphology": {
+        "leaves": "Simple, alternate or subopposite, ovate, entire, 5-10 cm long, covered with fine stellate whitish tomentum",
+        "stem": "Erect, branching shrub up to 1.5 m, branches round, tomentose",
+        "root": "Straight, cylindrical, unbranched, 10-30 cm long, buff to light brown outer bark with longitudinal wrinkles, short starchy fracture, horse-like pungent odor when fresh",
+        "flowers": "Small, greenish or dull yellow, subsessile, fascicled in leaf axils",
+        "seeds_fruits": "Globose berry, 6 mm diameter, bright red when ripe, enclosed in persistent inflated membranous calyx"
+      },
+      "traditional_systems": {
+        "ayurveda": {
+          "rasa": [
+            "Tikta (Bitter)",
+            "Kashaya (Astringent)",
+            "Madhura (Sweet)"
+          ],
+          "guna": [
+            "Laghu (Light)",
+            "Snigdha (Unctuous)"
+          ],
+          "virya": "Ushna (Hot potency)",
+          "vipaka": "Madhura (Sweet post-digestive outcome)",
+          "prabhava": "Balya (Strength-giving), Rasayana (Longevity promotor), Vajikarana (Virility/Aphrodisiac)",
+          "dosha_karma": "Kapha-Vata Shamaka (Potent pacifier of Vata and Kapha)"
+        },
+        "siddha": {
+          "humoral_quality": "Veppam (Heating)",
+          "therapeutic_indications": [
+            "Keezhvatham (Rheumatic affections)",
+            "Irumal (Cough)",
+            "Thettrankottai (General debility)",
+            "Aanmai Kuraivu (Oligospermia)"
+          ]
+        },
+        "unani": {
+          "mizaj": "Garm 1st degree, Khushk 2nd degree",
+          "actions": [
+            "Muqawwi-e-Aam (General tonic)",
+            "Muqawwi-e-Bah (Aphrodisiac)",
+            "Musakkin-e-Asab (Nervine sedative)"
+          ]
+        }
+      },
+      "clinical_evidence": {
+        "evaluated_indications": [
+          "Chronic stress, generalized anxiety, and elevated serum cortisol",
+          "Sleep onset latency, sleep architecture, and non-restorative insomnia",
+          "Male reproductive parameters, sperm motility, and testosterone modulation",
+          "Muscle strength, recovery, and cardiorespiratory endurance (VO2 max)"
+        ],
+        "trial_registries": [
+          {
+            "registry_id": "CTRI/2019/04/018780",
+            "study_design": "Double-blind, randomized, placebo-controlled clinical trial on stress (n=64)",
+            "dosage_form": "Full-spectrum root extract (KSM-66, 300 mg bid containing 5% withanolides)",
+            "outcomes": "Serum cortisol reduced by 27.9% (p<0.001); Perceived Stress Scale (PSS) scores declined by 44% compared to 5.5% in placebo."
+          },
+          {
+            "registry_id": "NCT04065607",
+            "study_design": "Randomized, double-blind, placebo-controlled trial on insomnia (n=80)",
+            "dosage_form": "Standardized aqueous root extract (Shoden, 120 mg once daily)",
+            "outcomes": "Statistically significant improvement in sleep onset latency (-18 min), sleep efficiency (+9.2%), and total sleep time measured by actigraphy."
+          }
+        ],
+        "evidence_grading": "Grade A for stress/anxiety reduction and cortisol lowering; Grade B for insomnia and physical performance."
+      },
+      "phytochemistry": {
+        "primary_bioactives": [
+          {
+            "compound": "Withanolide A",
+            "class": "Steroidal lactone (ergostane-type)",
+            "fraction": "Root extract (0.5-2.0%)"
+          },
+          {
+            "compound": "Withaferin A",
+            "class": "C-28 steroidal lactone",
+            "fraction": "Leaves and roots (potent cytotoxic/anti-inflammatory)"
+          },
+          {
+            "compound": "Withanone",
+            "class": "Withanolide isomer",
+            "fraction": "Root fraction"
+          },
+          {
+            "compound": "Withanoside IV & VI",
+            "class": "Withanolide sulfated glycosides",
+            "fraction": "Aqueous root extract"
+          },
+          {
+            "compound": "Anaferine & Isopelletierine",
+            "class": "Alkaloids",
+            "fraction": "Root alkaloidal fraction"
+          }
+        ]
+      },
+      "safety_and_contraindications": {
+        "adverse_effects": "Mild somnolence, loose stools, or gastric irritation in small percentages; rare idiosyncratic drug-induced liver injury (DILI) reported with unregulated ethanolic supplements.",
+        "pregnancy_lactation_precautions": "CONTRAINDICATED during pregnancy due to historical abortifacient reputation at high doses; caution in lactation.",
+        "herb_drug_interactions": [
+          "Potentiates sedative effects of benzodiazepines, zolpidem, and barbiturates via GABAergic modulation.",
+          "May stimulate endogenous thyroid hormone synthesis (elevates free T3 and T4); monitor in Hashimoto's or levothyroxine therapy."
+        ],
+        "clinical_evidence_limitations": "Commercial extract differences (aqueous KSM-66 vs hydroalcoholic Sensoril vs leaf-enriched withaferin A extracts)."
+      }
+    },
+    "Moringa": {
+      "taxonomy": {
+        "canonical_name": "Moringa",
+        "scientific_name": "Moringa oleifera",
+        "author": "Lam.",
+        "botanical_family": "Moringaceae",
+        "synonyms": [
+          "Moringa pterygosperma Gaertn.",
+          "Hyperanthera moringa (L.) Vahl"
+        ],
+        "vernacular_names": {
+          "english": "Drumstick Tree, Horseradish Tree, Miracle Tree",
+          "hindi": "Sahjan, Munaga, Sengat",
+          "sanskrit": "Shigru, Shobhanjana, Teekshnagandha",
+          "kannada": "Nugge mara, Nuggekai",
+          "tamil": "Murungai"
+        },
+        "taxonomic_serial_number_gbif": "3054178"
+      },
+      "morphology": {
+        "leaves": "Tripinnate, alternate, 30-60 cm long, leaflets opposite, ovate or elliptic, entire margin, obtuse apex, pale beneath",
+        "stem": "Deciduous slender tree, 10-12 m height, corky whitish-gray bark with deep longitudinal cracks",
+        "flowers": "Fragrant, yellowish-white, bisexual, in large spreading axillary panicles",
+        "seeds_fruits": "Pendulous 3-angled 9-ribbed linear capsule (pod) 20-50 cm long, seeds subglobose with 3 papery wings"
+      },
+      "traditional_systems": {
+        "ayurveda": {
+          "rasa": [
+            "Katu (Pungent)",
+            "Tikta (Bitter)"
+          ],
+          "guna": [
+            "Laghu (Light)",
+            "Ruksha (Dry)",
+            "Tikshna (Sharp)"
+          ],
+          "virya": "Ushna (Hot potency)",
+          "vipaka": "Katu (Pungent post-digestive outcome)",
+          "prabhava": "Shothahara (Anti-inflammatory/anti-edematous), Krimighna, Deepana",
+          "dosha_karma": "Kapha-Vata Shamaka, Pitta Vardhaka in excess"
+        },
+        "siddha": {
+          "humoral_quality": "Veppam (Heating)",
+          "therapeutic_indications": [
+            "Vali Noigal (Neuralgic pains)",
+            "Moolam (Hemorrhoids)",
+            "Vaanthi (Nausea)",
+            "Puzhu Vettu (Alopecia)"
+          ]
+        },
+        "unani": {
+          "mizaj": "Garm 3rd degree, Khushk 2nd degree",
+          "actions": [
+            "Mulattif (Attenuant)",
+            "Mudirr-e-Baul (Diuretic)",
+            "Habis-e-Dam (Hemostatic)"
+          ]
+        }
+      },
+      "clinical_evidence": {
+        "evaluated_indications": [
+          "Postprandial hyperglycemia and glycemic variability in type 2 diabetes",
+          "Dyslipidemia and atherogenic index reduction",
+          "Postpartum lactation insufficiency (galactagogue efficacy)",
+          "Nutritional anemia and micronutrient replenishment"
+        ],
+        "trial_registries": [
+          {
+            "registry_id": "CTRI/2017/08/009321",
+            "study_design": "Randomized controlled crossover study in type 2 diabetic subjects (n=60)",
+            "dosage_form": "4 g standardized shade-dried leaf powder consumed with standard meal",
+            "outcomes": "Demonstrated a 14.8% reduction in postprandial glucose excursion curve compared to control (p=0.012)."
+          },
+          {
+            "registry_id": "IRCT2015090123847N1",
+            "study_design": "Double-blind, randomized, placebo-controlled trial on breast milk volume (n=88)",
+            "dosage_form": "Standardized leaf extract (250 mg bid)",
+            "outcomes": "Statistically significant increase in maternal serum prolactin and breast milk volume (+47% vs +16% in placebo on postpartum Day 3, p<0.001)."
+          }
+        ],
+        "evidence_grading": "Grade B for postprandial glucose moderation and galactagogue activity."
+      },
+      "phytochemistry": {
+        "primary_bioactives": [
+          {
+            "compound": "Glucomoringin",
+            "class": "Glucosinolate",
+            "fraction": "Leaves and seeds (unique to Moringaceae)"
+          },
+          {
+            "compound": "Moringin",
+            "class": "Isothiocyanate (active hydrolysate)",
+            "fraction": "Myrosinase-cleaved leaf extract"
+          },
+          {
+            "compound": "Chlorogenic acid",
+            "class": "Phenolic acid",
+            "fraction": "Leaves (0.5-1.2%)"
+          },
+          {
+            "compound": "Quercetin-3-O-glucoside",
+            "class": "Flavonol glycoside",
+            "fraction": "Leaf extract"
+          },
+          {
+            "compound": "Niazimicin",
+            "class": "Thiocarbamate",
+            "fraction": "Bark and seed fraction"
+          }
+        ]
+      },
+      "safety_and_contraindications": {
+        "adverse_effects": "Leaf powder is exceptionally well-tolerated at nutritional amounts up to 20 g/day; excessive intake may cause laxative effect.",
+        "pregnancy_lactation_precautions": "Leaf preparations are beneficial galactagogues in lactation; however, ROOT and BARK extracts are STRICTLY CONTRAINDICATED in pregnancy (contain spirochin alkaloids with abortifacient and uterine contracting activity).",
+        "herb_drug_interactions": [
+          "Potential additive hypoglycemic interaction with metformin and glimepiride.",
+          "Possible theoretical interference with levothyroxine absorption; separate dosing by at least 3 hours."
+        ],
+        "clinical_evidence_limitations": "Heterogeneity between culinary leaves, ethanolic extracts, and isolated seed cake across published literature."
+      }
+    },
+    "Centella_Asiatica": {
+      "taxonomy": {
+        "canonical_name": "Centella_Asiatica",
+        "scientific_name": "Centella asiatica",
+        "author": "(L.) Urb.",
+        "botanical_family": "Apiaceae",
+        "synonyms": [
+          "Hydrocotyle asiatica L.",
+          "Centella coriacea Nannf.",
+          "Trisanthus cochinchinensis Lour."
+        ],
+        "vernacular_names": {
+          "english": "Gotu Kola, Indian Pennywort, Asiatic Pennywort",
+          "hindi": "Mandukaparni, Brahmi (regional)",
+          "sanskrit": "Mandukaparni, Sarasvati, Medhya, Divya",
+          "kannada": "Ondelaga, Brahmi soppu",
+          "tamil": "Vallarai"
+        },
+        "taxonomic_serial_number_gbif": "3034983"
+      },
+      "morphology": {
+        "leaves": "Orbicular-reniform, simple, alternate or in rosettes from nodes, 1.5-5 cm diameter, crenate to dentate margins, long channeled petiole, palmately 5-7 veined from deeply cordate base",
+        "stem": "Prostrate, slender, trailing stoloniferous herb rooting at nodes, reddish-green",
+        "flowers": "Small, pinkish-red to white, in simple fascicled umbels of 3-4 flowers on short peduncles",
+        "seeds_fruits": "Cremocarp laterally compressed, curved, 3 mm long, with 7-9 distinct ribbed pericarps"
+      },
+      "traditional_systems": {
+        "ayurveda": {
+          "rasa": [
+            "Tikta (Bitter)",
+            "Kashaya (Astringent)",
+            "Madhura (Sweet)"
+          ],
+          "guna": [
+            "Laghu (Light)",
+            "Snigdha (Unctuous)"
+          ],
+          "virya": "Sheeta (Cold potency)",
+          "vipaka": "Madhura (Sweet post-digestive outcome)",
+          "prabhava": "Medhya (Nootropic / cognitive enhancer), Ayushya (Longevity promotor)",
+          "dosha_karma": "Tridosha Shamaka (Balances Pitta and Kapha, pacifies Vata through sweet Vipaka)"
+        },
+        "siddha": {
+          "humoral_quality": "Seetham (Cooling)",
+          "therapeutic_indications": [
+            "Koor-arivu (Cognitive deficit)",
+            "Moolanoi (Piles)",
+            "Venpadai (Vitiligo/Leukoderma)",
+            "Thol Noigal (Chronic ulcers)"
+          ]
+        },
+        "unani": {
+          "mizaj": "Sard 1st degree, Khushk 2nd degree",
+          "actions": [
+            "Muqawwi-e-Dimagh (Brain tonic)",
+            "Mufatti-e-Sudad (Deobstruent)",
+            "Musaffi-e-Dam (Blood purifier)"
+          ]
+        }
+      },
+      "clinical_evidence": {
+        "evaluated_indications": [
+          "Mild cognitive impairment (MCI) and age-associated memory impairment",
+          "Chronic venous insufficiency (CVI), microangiopathy, and leg edema",
+          "Hypertrophic scar remodeling, keloid attenuation, and striae gravidarum",
+          "Generalized anxiety and stress reactivity"
+        ],
+        "trial_registries": [
+          {
+            "registry_id": "CTRI/2016/11/007452",
+            "study_design": "Double-blind, randomized, placebo-controlled trial on cognitive decline (n=60)",
+            "dosage_form": "Standardized aqueous extract (500 mg bid standardized to 3% asiaticoside)",
+            "outcomes": "Statistically significant improvement in working memory index (+14.2%) and executive function scores on the Wechsler Memory Scale (p=0.007)."
+          },
+          {
+            "registry_id": "NCT03092817",
+            "study_design": "Randomized double-blind dose-response trial in chronic venous hypertension (n=94)",
+            "dosage_form": "Total triterpenic fraction of Centella asiatica (TTFCA, 60 mg bid)",
+            "outcomes": "Significant reduction in ambulatory venous pressure and ankle circumference edema (-2.8 mm, p<0.001) due to enhanced collagen-I synthesis."
+          }
+        ],
+        "evidence_grading": "Grade A for chronic venous insufficiency and microcirculatory perfusion; Grade B for cognitive enhancement."
+      },
+      "phytochemistry": {
+        "primary_bioactives": [
+          {
+            "compound": "Asiaticoside",
+            "class": "Triterpenoid saponin (ursane-type)",
+            "fraction": "Whole plant (1-4%)"
+          },
+          {
+            "compound": "Madecassoside",
+            "class": "Triterpenoid glycoside",
+            "fraction": "Leaves (2-6%)"
+          },
+          {
+            "compound": "Asiatic acid",
+            "class": "Aglycone triterpenic acid",
+            "fraction": "Hydrolysis product"
+          },
+          {
+            "compound": "Madecassic acid",
+            "class": "Aglycone triterpenic acid",
+            "fraction": "Active sapogenin"
+          },
+          {
+            "compound": "Brahmoside & Brahminoside",
+            "class": "Glycosides",
+            "fraction": "Minor triterpenes"
+          }
+        ]
+      },
+      "safety_and_contraindications": {
+        "adverse_effects": "Extremely low toxicity; transient mild gastric upset or dizziness reported in <2% of subjects; rare allergic contact dermatitis with topical ointments.",
+        "pregnancy_lactation_precautions": "Avoid high-dose internal use in pregnancy due to traditional emmenagogue reputation; topical creams generally considered safe.",
+        "herb_drug_interactions": [
+          "Potential synergistic sedation when co-administered with benzodiazepines, barbiturates, or z-drugs.",
+          "Caution when combined with potentially hepatotoxic prescription agents during prolonged high-dose administration."
+        ],
+        "clinical_evidence_limitations": "Frequent vernacular confusion in literature between Centella asiatica (Mandukaparni) and Bacopa monnieri (Jal-Brahmi)."
+      }
+    },
+    "Hibiscus": {
+      "taxonomy": {
+        "canonical_name": "Hibiscus",
+        "scientific_name": "Hibiscus rosa-sinensis",
+        "author": "L.",
+        "botanical_family": "Malvaceae",
+        "synonyms": [
+          "Hibiscus boryanus DC.",
+          "Hibiscus arnottii Griff.",
+          "Hibiscus festalis Salisb."
+        ],
+        "vernacular_names": {
+          "english": "China Rose, Shoe Flower, Tropical Hibiscus",
+          "hindi": "Gudhal, Java",
+          "sanskrit": "Japa, Java, Aruna, Raktapushpi, Trisandhya",
+          "kannada": "Dasavala, Dasanige",
+          "tamil": "Sembaruthi, Chemparathai"
+        },
+        "taxonomic_serial_number_gbif": "3152589"
+      },
+      "morphology": {
+        "leaves": "Simple, alternate, ovate to broadly lanceolate, 7-15 cm long, coarsely serrate margins toward apex, entire at rounded base, glabrous or with sparse stellate hairs",
+        "stem": "Evergreen woody shrub, 2.5-5 m height, smooth grayish bark with lenticels",
+        "flowers": "Large, showy, solitary in upper leaf axils, 10-15 cm diameter, 5 brilliant red petals, staminal column long-exserted bearing golden anthers, 5-branched red style",
+        "seeds_fruits": "Rarely fruits in cultivation; 5-valved globose capsule with reniform seeds"
+      },
+      "traditional_systems": {
+        "ayurveda": {
+          "rasa": [
+            "Kashaya (Astringent)",
+            "Tikta (Bitter)"
+          ],
+          "guna": [
+            "Laghu (Light)",
+            "Ruksha (Dry)"
+          ],
+          "virya": "Sheeta (Cold potency)",
+          "vipaka": "Katu (Pungent post-digestive outcome)",
+          "prabhava": "Keshya (Promotes hair growth), Stambhana (Hemostatic), Hridya",
+          "dosha_karma": "Pitta-Kapha Shamaka (Pacifies aggravated Pitta and Kapha, especially Raktapitta)"
+        },
+        "siddha": {
+          "humoral_quality": "Seetham (Cooling)",
+          "therapeutic_indications": [
+            "Koonthal Valarppu (Trichogenic / hair growth)",
+            "Ratha Pitham (Bleeding disorders)",
+            "Perumbadu (Menorrhagia)"
+          ]
+        },
+        "unani": {
+          "mizaj": "Barid 2nd degree, Yabis 2nd degree",
+          "actions": [
+            "Mufarreh-e-Qalb (Cardiotonic exhilarant)",
+            "Qabiz (Astringent)",
+            "Habis-e-Dam (Styptic)"
+          ]
+        }
+      },
+      "clinical_evidence": {
+        "evaluated_indications": [
+          "Trichogenic stimulation and telogen-to-anagen hair follicle transition",
+          "Stage-1 primary essential hypertension regulation (cross-evidence with Hibiscus sabdariffa)",
+          "Benign prostatic hyperplasia (BPH) and 5-alpha-reductase inhibition",
+          "Menorrhagia and abnormal uterine bleeding stabilization"
+        ],
+        "trial_registries": [
+          {
+            "registry_id": "CTRI/2018/03/012589",
+            "study_design": "Single-blind randomized comparative study in androgenic alopecia (n=60)",
+            "dosage_form": "Topical 5% standardized hydroalcoholic petal extract applied daily to scalp",
+            "outcomes": "Demonstrated significant increase in hair follicle density (+22.4 hairs/cm2) and hair shaft diameter over 16 weeks, comparable to 2% topical minoxidil."
+          },
+          {
+            "registry_id": "NCT02484040",
+            "study_design": "Randomized, double-blind active-controlled trial in mild hypertension (n=75)",
+            "dosage_form": "Standardized anthocyanin-rich calyx/flower extract (250 mg bid)",
+            "outcomes": "Mean systolic blood pressure dropped by 7.2 mmHg and diastolic BP by 4.1 mmHg compared to baseline (p=0.015), mediated through ACE inhibition."
+          }
+        ],
+        "evidence_grading": "Grade B for topical trichogenic stimulation; Grade B for mild blood pressure modulation."
+      },
+      "phytochemistry": {
+        "primary_bioactives": [
+          {
+            "compound": "Cyanidin-3-sophoroside",
+            "class": "Anthocyanin pigment",
+            "fraction": "Flower petals (major red pigment)"
+          },
+          {
+            "compound": "Delphinidin-3-sambubioside",
+            "class": "Anthocyanin",
+            "fraction": "Floral calyx and petals"
+          },
+          {
+            "compound": "Quercetin & Kaempferol",
+            "class": "Flavonols",
+            "fraction": "Leaf and petal extract"
+          },
+          {
+            "compound": "Hibiscetin",
+            "class": "Flavonoid",
+            "fraction": "Flower extract"
+          },
+          {
+            "compound": "Acidic polysaccharides / Mucilage",
+            "class": "Pectic polysaccharides",
+            "fraction": "Leaves and petals (demulcent)"
+          }
+        ]
+      },
+      "safety_and_contraindications": {
+        "adverse_effects": "Remarkably safe; zero systemic toxicity noted with topical hair formulations; excessive oral ingestion may cause mild transient diarrhea.",
+        "pregnancy_lactation_precautions": "Oral ingestion in high therapeutic doses should be AVOIDED during pregnancy due to documented anti-estrogenic and emmenagogue activities.",
+        "herb_drug_interactions": [
+          "Possible additive blood pressure reduction when co-administered with antihypertensives (losartan, amlodipine).",
+          "Floral anthocyanins may increase renal excretion of acetaminophen; separate dosing intervals."
+        ],
+        "clinical_evidence_limitations": "Many systemic cardiovascular trials utilized Hibiscus sabdariffa (Roselle) calyces; Hibiscus rosa-sinensis has greater dedicated human trials in trichology."
+      }
+    },
+    "Catharanthus_Roseus": {
+      "taxonomy": {
+        "canonical_name": "Catharanthus_Roseus",
+        "scientific_name": "Catharanthus roseus",
+        "author": "(L.) G.Don",
+        "botanical_family": "Apocynaceae",
+        "synonyms": [
+          "Vinca rosea L.",
+          "Lochnera rosea (L.) Rchb.",
+          "Ammocallis rosea (L.) Small"
+        ],
+        "vernacular_names": {
+          "english": "Madagascar Periwinkle, Rosy Periwinkle, Old Maid",
+          "hindi": "Sadabahar, Nayantara, Baramasi",
+          "sanskrit": "Nityakalyani, Sadapushpa, Ushasuna",
+          "kannada": "Sadapushpa, Kempu kashi kanagale",
+          "tamil": "Nithyakalyani, Sudukattu malli"
+        },
+        "taxonomic_serial_number_gbif": "3169748"
+      },
+      "morphology": {
+        "leaves": "Opposite, decussate, oval to oblong-elliptic, 2.5-8 cm long, glossy dark green above, paler beneath, prominent pale midrib, entire margin, short petiole with gland at base",
+        "stem": "Erect suffruticose subshrub up to 1 m, stems round, smooth, pale green or suffused with purple, exudes white milky latex when damaged",
+        "flowers": "Salverform, 3-5 cm diameter, corolla tube slender with 5 spreading obovate lobes, rose-pink, lavender, or pure white with dark red/yellow eye",
+        "seeds_fruits": "Paired cylindrical erect pubescent follicles, 2-4 cm long, dehiscing longitudinally, seeds small, black, oblong"
+      },
+      "traditional_systems": {
+        "ayurveda": {
+          "rasa": [
+            "Tikta (Bitter)",
+            "Kashaya (Astringent)"
+          ],
+          "guna": [
+            "Laghu (Light)",
+            "Ruksha (Dry)"
+          ],
+          "virya": "Ushna (Hot potency)",
+          "vipaka": "Katu (Pungent post-digestive outcome)",
+          "prabhava": "Mehashamana (Potent antidiabetic), Vranaropana, Vishaghna",
+          "dosha_karma": "Kapha-Vata Shamaka, Pitta Vardhaka in concentrated form"
+        },
+        "siddha": {
+          "humoral_quality": "Veppam (Heating)",
+          "therapeutic_indications": [
+            "Madhumegam (Diabetes mellitus)",
+            "Putru Noigal (Neoplasms/Cancer)",
+            "Vatha Noigal (Arthritic swelling)"
+          ]
+        },
+        "unani": {
+          "mizaj": "Garm 2nd degree, Khushk 2nd degree",
+          "actions": [
+            "Dafe-Ziya-beetus (Antidiabetic)",
+            "Musaffi-e-Dam (Blood purifier)",
+            "Muhallil (Resolvent)"
+          ]
+        }
+      },
+      "clinical_evidence": {
+        "evaluated_indications": [
+          "Oncology: FDA-approved purified vinca alkaloids (Vinblastine, Vincristine) for Hodgkin lymphoma, acute lymphoblastic leukemia, neuroblastoma",
+          "Type 2 diabetes glycemic regulation (whole leaf aqueous and ethanolic extracts)",
+          "Cutaneous wound contraction and angiogenesis stimulation",
+          "Mild essential hypertension (via peripheral vasodilating alkaloids ajmalicine/raubasine)"
+        ],
+        "trial_registries": [
+          {
+            "registry_id": "CTRI/2016/09/007248",
+            "study_design": "Open-label randomized controlled clinical trial in type 2 diabetes (n=50)",
+            "dosage_form": "Whole leaf aqueous decoction (equivalent to 100 mg/kg dry powder daily)",
+            "outcomes": "Statistically significant decrease in fasting blood glucose (-18.2 mg/dL) and postprandial glucose (-24.5 mg/dL) after 8 weeks; mechanism linked to intestinal alpha-glucosidase inhibition."
+          },
+          {
+            "registry_id": "NCT00002824",
+            "study_design": "Phase 3 multi-center oncology protocol incorporating isolated Vincristine sulfate",
+            "dosage_form": "Purified vincristine intravenous infusion (1.4 mg/m2)",
+            "outcomes": "Tubulin binding and mitotic spindle metaphase arrest; foundational backbone agent across pediatric oncology."
+          }
+        ],
+        "evidence_grading": "Grade A for isolated oncology chemotherapeutic drugs; Grade B- for whole plant oral antidiabetic extract."
+      },
+      "phytochemistry": {
+        "primary_bioactives": [
+          {
+            "compound": "Vinblastine",
+            "class": "Bisindole alkaloid",
+            "fraction": "Leaves (0.0005% fresh weight - major antineoplastic)"
+          },
+          {
+            "compound": "Vincristine",
+            "class": "Bisindole alkaloid",
+            "fraction": "Leaves (extremely low yield, oxidatively derived)"
+          },
+          {
+            "compound": "Ajmalicine (Raubasine)",
+            "class": "Monomeric indole alkaloid",
+            "fraction": "Roots (0.1-0.3% - antihypertensive)"
+          },
+          {
+            "compound": "Serpentine",
+            "class": "Anhydronium base indole alkaloid",
+            "fraction": "Roots (sedative / hypotensive)"
+          },
+          {
+            "compound": "Catharanthine & Vindoline",
+            "class": "Monomeric indole precursors",
+            "fraction": "Leaves (building blocks for bisindoles)"
+          }
+        ]
+      },
+      "safety_and_contraindications": {
+        "adverse_effects": "Whole plant has NARROW THERAPEUTIC INDEX. Ingestion of raw leaves or concentrated decoctions can induce severe myelosuppression, peripheral neuropathy, hair loss, intestinal ileus, and hypotension.",
+        "pregnancy_lactation_precautions": "ABSOLUTELY CONTRAINDICATED in pregnancy (potent teratogen and abortifacient) and lactation.",
+        "herb_drug_interactions": [
+          "Dangerous potentiation when combined with pharmaceutical antineoplastic agents, enhancing bone marrow suppression.",
+          "Additive hypoglycemia with oral antidiabetics; risk of severe hypoglycemia without medical supervision."
+        ],
+        "clinical_evidence_limitations": "CRITICAL WARNING: While isolated vinca alkaloids are life-saving pharmaceuticals, raw whole-plant home remedies carry high toxicity risk and must never substitute for standard oncology or diabetes care."
+      }
+    },
+    "Tomato": {
+      "taxonomy": {
+        "canonical_name": "Tomato",
+        "scientific_name": "Solanum lycopersicum",
+        "author": "L.",
+        "botanical_family": "Solanaceae",
+        "synonyms": [
+          "Lycopersicon esculentum Mill.",
+          "Lycopersicon lycopersicum (L.) Farw.",
+          "Solanum esculentum Dunal"
+        ],
+        "vernacular_names": {
+          "english": "Tomato",
+          "hindi": "Tamatar",
+          "sanskrit": "Raktaphala, Tamatara",
+          "kannada": "Takkali, Tomato",
+          "tamil": "Thakkali",
+          "telugu": "Ramamulaga, Tomato"
+        },
+        "taxonomic_serial_number_gbif": "2930137"
+      },
+      "morphology": {
+        "leaves": "Alternate, odd-pinnately compound, 15-50 cm long with 5-9 toothed or lobed leaflets, glandular pubescent with characteristic pungent odor, glandular trichomes secreting volatile terpenes",
+        "stem": "Decumbent to erect branching herb up to 2 m, densely glandular-hairy, angled, herbaceous becoming woody at base with age",
+        "flowers": "Extra-axillary cymes, 3-12 flowers, yellow corolla with 5 reflexed lobes, 5 connivent anthers forming a cone around style",
+        "seeds_fruits": "Fleshy berry, globose to oblate, 2-15 cm diameter, red/yellow at maturity, seeds numerous, kidney-shaped, hairy"
+      },
+      "traditional_systems": {
+        "ayurveda": {
+          "rasa": [
+            "Amla (Sour)",
+            "Madhura (Sweet)"
+          ],
+          "guna": [
+            "Guru (Heavy)",
+            "Snigdha (Unctuous)"
+          ],
+          "virya": "Sheeta (Cold potency / refrigerant)",
+          "vipaka": "Amla (Sour post-digestive outcome)",
+          "prabhava": "Deepana (Appetizer), Hridya (Cardiotonic), Raktashodhaka (Blood purifier)",
+          "dosha_karma": "Vata-Kapha Vardhaka in excess; Pitta Shamaka when ripe and sweet"
+        },
+        "siddha": {
+          "humoral_quality": "Thannooru (Cooling)",
+          "therapeutic_indications": [
+            "Raktha Kothippu (Hypertension support)",
+            "Serippu Inmai (Indigestion)"
+          ]
+        },
+        "unani": {
+          "mizaj": "Barid-o-Rattab (Cold and Moist 1st degree)",
+          "actions": [
+            "Mufattih (Deobstruent)",
+            "Musakkin-e-Hararat (Refrigerant)",
+            "Muqawwi-e-Meda (Stomachic)"
+          ]
+        }
+      },
+      "clinical_evidence": {
+        "evaluated_indications": [
+          "Cardiovascular risk reduction and blood pressure moderation via lycopene antioxidant mechanisms",
+          "Prostate cellular proliferation attenuation and PSA modulation",
+          "Cutaneous UV erythema protection and photodamage resistance",
+          "Endothelial nitric oxide bioavailability enhancement and anti-atherosclerosis"
+        ],
+        "trial_registries": [
+          {
+            "registry_id": "NCT01755910",
+            "study_design": "Randomized, double-blind, placebo-controlled human trial (n=80)",
+            "dosage_form": "Standardized tomato extract (containing 15 mg bioavailable lycopene daily)",
+            "outcomes": "Statistically significant improvement in flow-mediated dilation (FMD +5.3%, p=0.012) and reduction in oxidized LDL levels compared to placebo over 8 weeks."
+          },
+          {
+            "registry_id": "CTRI/2019/04/018721",
+            "study_design": "Prospective clinical cohort study on metabolic oxidative stress (n=100)",
+            "dosage_form": "Tomato pomace extract (250 mg twice daily)",
+            "outcomes": "Marked reduction in malondialdehyde (MDA) lipid peroxidation markers (-22.4%, p<0.005) and systolic blood pressure (-6.8 mmHg)."
+          }
+        ],
+        "evidence_grading": "Grade A for cardiovascular dietary protection and prostate health; Grade B for cutaneous photoprotection."
+      },
+      "phytochemistry": {
+        "primary_bioactives": [
+          {
+            "compound": "Lycopene",
+            "class": "Acyclic carotenoid",
+            "fraction": "Ripe fruit pulp (80-90% of total carotenoids, 30-100 mg/kg)"
+          },
+          {
+            "compound": "Tomatine (alpha-tomatine)",
+            "class": "Steroidal glycoalkaloid",
+            "fraction": "Foliage, leaves, and green unripe fruit (defense secondary metabolite)"
+          },
+          {
+            "compound": "Beta-carotene",
+            "class": "Bicyclic carotenoid (Provitamin A)",
+            "fraction": "Fruit chromoplasts (3-5 mg/kg)"
+          },
+          {
+            "compound": "Chlorogenic acid",
+            "class": "Hydroxycinnamic acid ester",
+            "fraction": "Leaves and outer fruit skin"
+          },
+          {
+            "compound": "Rutin (Quercetin-3-O-rutinoside)",
+            "class": "Flavonol glucoside",
+            "fraction": "Foliar extract and epidermal cells"
+          }
+        ]
+      },
+      "safety_and_contraindications": {
+        "adverse_effects": "Ripe fruit is highly safe and edible. Raw foliage, green stems, and unripe green fruits contain toxic glycoalkaloids (alpha-tomatine / solanine) which cause gastrointestinal burning, cramping, and anticholinesterase toxicity if ingested in volume.",
+        "pregnancy_lactation_precautions": "Ripe culinary tomato is safe in dietary amounts. Medicinal concentrated foliage or leaf decoctions are CONTRAINDICATED due to glycoalkaloid content.",
+        "herb_drug_interactions": [
+          "High dietary potassium in tomato products requires caution in patients on ACE inhibitors, ARBs, or potassium-sparing diuretics (spironolactone) to avoid hyperkalemia.",
+          "Mild antiplatelet effect from water-soluble tomato extract (Fruitflow) may slightly augment aspirin or warfarin."
+        ],
+        "clinical_evidence_limitations": "Cardiovascular benefits require consistent consumption of lipid-cooked or heat-processed lycopene forms due to superior cis-isomer bioavailability."
+      }
+    }
+  }
+}

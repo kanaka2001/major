@@ -1,0 +1,43 @@
+# Virtual environment
+.venv/
+venv/
+ENV/
+env/
+
+# Python byte-code and cache
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.pytest_cache/
+
+# Large model weights (>100MB exceeds GitHub hard limit)
+checkpoints/*.pth
+
+# Large raw and processed datasets (>50GB)
+dataset/*/
+dataset/splits_manifest.csv
+!dataset/class_mapping.json
+crop_images/
+plantnet_300K/
+PreProcessed_dataset/
+*.zip
+*.tar.gz
+*.tar
+A Database of Leaf Images*
+BD-MediFlora-22*
+data-marufa*
+Dataset of Medicinal Plant Leaves*
+DocPlant*
+Medicinal Leaf Dataset*
+Medicinal_Plant_leaf*
+MPBD-18*
+PhilMedic*
+Segmented Medicinal Leaf Images*
+Turmeric Plant Disease*
+
+# Temporary files and OS files
+.DS_Store
+Thumbs.db
+reports/pipeline_runs/*.jpg
+reports/pipeline_runs/*.png

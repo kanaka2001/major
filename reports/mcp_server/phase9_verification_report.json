@@ -1,0 +1,463 @@
+{
+  "status": "PHASE_9_COMPLETE_AND_VERIFIED",
+  "timestamp": "2026-11-14 04:13:35 UTC",
+  "mcp_server": {
+    "name": "mcp-server-medicinal-plants",
+    "version": "1.0.0",
+    "protocol_version": "2024-11-05",
+    "transport": "JSON-RPC 2.0 over Standard I/O (stdio)",
+    "tools_count": 4,
+    "tools": [
+      {
+        "name": "identify_medicinal_plant",
+        "description": "Identifies a medicinal plant from a photograph using our 1,203-class Hybrid CNN\u2013ViT model. Applies dual-threshold uncertainty gating (confidence < 0.60 or entropy > 0.45) to automatically route out-of-distribution or ambiguous inputs to the Pl@ntNet API fallback.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "image_path": {
+              "type": "string",
+              "description": "Absolute or relative filesystem path to the query plant image (.jpg, .jpeg, .png)."
+            },
+            "organ_hint": {
+              "type": "string",
+              "enum": [
+                "leaf",
+                "flower",
+                "fruit",
+                "bark",
+                "whole_plant",
+                "general"
+              ],
+              "description": "Optional prior knowledge of the plant organ depicted in the image."
+            }
+          },
+          "required": [
+            "image_path"
+          ]
+        }
+      },
+      {
+        "name": "explain_plant_prediction",
+        "description": "Generates multimodal Explainable AI (XAI) visual diagnostics for a medicinal plant image. Computes CNN micro-texture Grad-CAM on the terminal convolution layer, ViT macroscopic Attention Rollout across all 6 Transformer encoder blocks, a fused composite saliency map, and the Anatomical Focus Score (AFS). Saves a publication-quality 4-panel diagnostic figure to disk.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "image_path": {
+              "type": "string",
+              "description": "Absolute or relative filesystem path to the query plant image."
+            },
+            "target_class": {
+              "type": "string",
+              "description": "Optional target species name (common or binomial) for targeted Grad-CAM saliency. If omitted, targets the model's top prediction."
+            },
+            "output_dir": {
+              "type": "string",
+              "description": "Directory where the 4-panel diagnostic plot should be saved. Defaults to 'reports/xai_diagnostics'."
+            }
+          },
+          "required": [
+            "image_path"
+          ]
+        }
+      },
+      {
+        "name": "get_plant_information",
+        "description": "Retrieves an exhaustive botanical, taxonomic, phytochemical, and pharmacopoeial profile for a given medicinal plant from our curated WHO/IMPPAT/NCCIH knowledge database. Accepts common vernacular names (e.g. 'Tulsi', 'Aloe Vera', 'Holy Basil') or scientific binomials.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "species_name": {
+              "type": "string",
+              "description": "Common vernacular name or binomial scientific name of the medicinal plant."
+            }
+          },
+          "required": [
+            "species_name"
+          ]
+        }
+      },
+      {
+        "name": "get_medicinal_uses",
+        "description": "Queries traditional medical systems and clinical trial evidence for a specific plant. Retrieves Ayurvedic pharmacodynamics (Rasa, Guna, Virya, Vipaka, Prabhava, Dosha Karma), Siddha/Unani indications, peer-reviewed clinical trials (CTRI, NCT, IRCT), bioactives, or safety/contraindications.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "species_name": {
+              "type": "string",
+              "description": "Common or scientific name of the medicinal plant."
+            },
+            "system": {
+              "type": "string",
+              "enum": [
+                "all",
+                "ayurveda",
+                "siddha_unani",
+                "clinical",
+                "phytochemistry",
+                "safety"
+              ],
+              "default": "all",
+              "description": "Specific medical framework or evidence category to filter by."
+            }
+          },
+          "required": [
+            "species_name"
+          ]
+        }
+      }
+    ]
+  },
+  "knowledge_database": {
+    "path": "data/medicinal_knowledge_db.json",
+    "curated_species_count": 11,
+    "sources": [
+      "WHO Monographs on Selected Medicinal Plants (Volumes 1-4)",
+      "IMPPAT 3.0: Indian Medicinal Plants, Phytochemistry And Therapeutics",
+      "NIH National Center for Complementary and Integrative Health (NCCIH)",
+      "Ayurvedic Pharmacopoeia of India (API)",
+      "Plants of the World Online (POWO), Royal Botanic Gardens, Kew"
+    ],
+    "curated_species": [
+      {
+        "canonical_name": "Tulsi",
+        "scientific_name": "Ocimum tenuiflorum",
+        "botanical_family": "Lamiaceae",
+        "english_name": "Holy Basil"
+      },
+      {
+        "canonical_name": "Aloe_Vera",
+        "scientific_name": "Aloe vera",
+        "botanical_family": "Asphodelaceae",
+        "english_name": "Aloe Vera, Barbados Aloe, Medicinal Aloe"
+      },
+      {
+        "canonical_name": "Ginger",
+        "scientific_name": "Zingiber officinale",
+        "botanical_family": "Zingiberaceae",
+        "english_name": "Ginger"
+      },
+      {
+        "canonical_name": "Neem",
+        "scientific_name": "Azadirachta indica",
+        "botanical_family": "Meliaceae",
+        "english_name": "Neem, Margosa Tree, Indian Lilac"
+      },
+      {
+        "canonical_name": "Turmeric",
+        "scientific_name": "Curcuma longa",
+        "botanical_family": "Zingiberaceae",
+        "english_name": "Turmeric, Indian Saffron"
+      },
+      {
+        "canonical_name": "Ashwagandha",
+        "scientific_name": "Withania somnifera",
+        "botanical_family": "Solanaceae",
+        "english_name": "Winter Cherry, Indian Ginseng"
+      },
+      {
+        "canonical_name": "Moringa",
+        "scientific_name": "Moringa oleifera",
+        "botanical_family": "Moringaceae",
+        "english_name": "Drumstick Tree, Horseradish Tree, Miracle Tree"
+      },
+      {
+        "canonical_name": "Centella_Asiatica",
+        "scientific_name": "Centella asiatica",
+        "botanical_family": "Apiaceae",
+        "english_name": "Gotu Kola, Indian Pennywort, Asiatic Pennywort"
+      },
+      {
+        "canonical_name": "Hibiscus",
+        "scientific_name": "Hibiscus rosa-sinensis",
+        "botanical_family": "Malvaceae",
+        "english_name": "China Rose, Shoe Flower, Tropical Hibiscus"
+      },
+      {
+        "canonical_name": "Catharanthus_Roseus",
+        "scientific_name": "Catharanthus roseus",
+        "botanical_family": "Apocynaceae",
+        "english_name": "Madagascar Periwinkle, Rosy Periwinkle, Old Maid"
+      },
+      {
+        "canonical_name": "Tomato",
+        "scientific_name": "Solanum lycopersicum",
+        "botanical_family": "Solanaceae",
+        "english_name": "Tomato"
+      }
+    ]
+  },
+  "tool_executions": [
+    {
+      "tool": "identify_medicinal_plant",
+      "status": "PASS",
+      "elapsed_seconds": 2.3823,
+      "result": {
+        "source": "local_hybrid_model",
+        "is_uncertain": false,
+        "routing_reason": "Decision confident: Top-1 Confidence (0.9972) >= 0.6 and Normalized Entropy (0.0031) <= 0.45",
+        "detected_species": "Tulsi",
+        "confidence": 0.9972,
+        "confidence_percentage": "99.72%",
+        "detected_organ": "general",
+        "uncertainty_metrics": {
+          "top1_confidence": 0.9972,
+          "normalized_entropy": 0.0031,
+          "confidence_threshold": 0.6,
+          "entropy_threshold": 0.45,
+          "is_low_confidence": false,
+          "is_high_entropy": false
+        },
+        "top5_candidates": [
+          {
+            "species": "Tulsi",
+            "species_idx": 1173,
+            "confidence": 0.9972
+          },
+          {
+            "species": "Tomato",
+            "species_idx": 1108,
+            "confidence": 0.002
+          },
+          {
+            "species": "Aloe_Vera",
+            "species_idx": 80,
+            "confidence": 0.0004
+          },
+          {
+            "species": "Neem",
+            "species_idx": 761,
+            "confidence": 0.0004
+          },
+          {
+            "species": "Ginger",
+            "species_idx": 486,
+            "confidence": 0.0
+          }
+        ],
+        "fallback_payload": null,
+        "curated_knowledge_available": true,
+        "curated_species_key": "Tulsi"
+      }
+    },
+    {
+      "tool": "explain_plant_prediction",
+      "status": "PASS",
+      "elapsed_seconds": 1.2304,
+      "result": {
+        "predicted_species": "Aloe_Vera",
+        "species_confidence": "99.66%",
+        "predicted_organ": "general",
+        "organ_confidence": "100.00%",
+        "anatomical_focus_score_afs": "61.72%",
+        "diagnostic_figure_path": "reports/mcp_server/xai/mcp_Aloe_Vera_general_00206_xai_diagnostic.png",
+        "diagnostic_figure_absolute_path": "/home/madhu/Downloads/zip/reports/mcp_server/xai/mcp_Aloe_Vera_general_00206_xai_diagnostic.png",
+        "xai_interpretability_summary": {
+          "cnn_grad_cam": "Highlights micro-textural epidermal markers (venation, trichomes, dentation) activating terminal conv layer.",
+          "vit_attention_rollout": "Highlights macroscopic morphological boundaries and spatial organ contour attended by 6-layer Transformer.",
+          "fused_composite": "Blended 50/50 saliency map overlayed at 48% opacity directly on the RGB plant photograph.",
+          "clinical_relevance": "Anatomical Focus Score of 61.7% verifies proportion of attention resting on authentic plant tissue."
+        }
+      }
+    },
+    {
+      "tool": "get_plant_information",
+      "status": "PASS",
+      "elapsed_seconds": 0.0001,
+      "result": {
+        "taxonomy": {
+          "canonical_name": "Tulsi",
+          "scientific_name": "Ocimum tenuiflorum",
+          "author": "L.",
+          "botanical_family": "Lamiaceae",
+          "synonyms": [
+            "Ocimum sanctum L.",
+            "Lumnitzera tenuiflora (L.) Spreng.",
+            "Plectranthus monachorum (R.Br.) Spreng."
+          ],
+          "vernacular_names": {
+            "english": "Holy Basil",
+            "hindi": "Tulsi",
+            "sanskrit": "Tulasi, Surasa, Vaishnavi, Apetarakshasi",
+            "kannada": "Tulasi, Sri Tulasi",
+            "tamil": "Thulasi"
+          },
+          "taxonomic_serial_number_gbif": "3170258"
+        },
+        "morphology": {
+          "leaves": "Ovate to elliptic, obtuse or acute, serrate or entire margin, pubescent on both surfaces, glandular-punctate containing volatile oil glands, petiolate",
+          "stem": "Quadrangular, branched, woody at base, purplish-green to dark purple pubescence",
+          "flowers": "Verticillaster raceme, purplish to reddish-pink corolla, stamens exserted, bilabiate calyx",
+          "seeds_fruits": "Nutlets subglobose, slightly compressed, rugose, brown to black, mucilaginous when wetted"
+        },
+        "traditional_systems": {
+          "ayurveda": {
+            "rasa": [
+              "Katu (Pungent)",
+              "Tikta (Bitter)"
+            ],
+            "guna": [
+              "Laghu (Light)",
+              "Ruksha (Dry)",
+              "Tikshna (Sharp)"
+            ],
+            "virya": "Ushna (Hot potency / thermogenic)",
+            "vipaka": "Katu (Pungent post-digestive outcome)",
+            "prabhava": "Hridya (Cardiotonic), Vishaghna (Antitoxic/adaptogenic)",
+            "dosha_karma": "Kapha-Vata Shamaka (Alleviates Kapha and Vata), Pitta Vardhaka in excess"
+          },
+          "siddha": {
+            "humoral_quality": "Veppam (Heating)",
+            "therapeutic_indications": [
+              "Irumal (Cough)",
+              "Eraippu (Bronchial asthma)",
+              "Suram (Fever)",
+              "Seriyamai (Indigestion)"
+            ]
+          },
+          "unani": {
+            "mizaj": "Garm-o-Khushk (Hot and Dry, 2nd degree)",
+            "actions": [
+              "Mufarreh (Exhilarant / nervous stimulant)",
+              "Tiryaq (Antidote)",
+              "Munaqqi-e-Seena (Expectorant)"
+            ]
+          }
+        },
+        "clinical_evidence": {
+          "evaluated_indications": [
+            "Metabolic syndrome, fasting hyperglycemia, and insulin sensitivity",
+            "Generalized anxiety disorder and neurocognitive stress reduction",
+            "Upper respiratory tract viral infections and immune modulation",
+            "Periodontal pathogen inhibition and anti-gingivitis efficacy"
+          ],
+          "trial_registries": [
+            {
+              "registry_id": "CTRI/2017/02/007802",
+              "study_design": "Double-blind, randomized, placebo-controlled human trial (n=120)",
+              "dosage_form": "Standardized leaf extract (300 mg bid, containing 5% ursolic acid)",
+              "outcomes": "Statistically significant reduction in fasting blood glucose (-17.6%, p<0.01) and total cholesterol (-11.3%), with improved HOMA-IR index over 12 weeks."
+            },
+            {
+              "registry_id": "NCT01106885",
+              "study_design": "Randomized controlled crossover study on stress attenuation (n=84)",
+              "dosage_form": "Whole herb aqueous extract 400 mg daily",
+              "outcomes": "39% mean reduction in generalized anxiety Hamilton Anxiety Rating Scale (HAM-A) scores; salivary cortisol dropped significantly (p=0.004) compared to placebo."
+            }
+          ],
+          "evidence_grading": "Grade B (Moderate human clinical evidence for adaptogenic, metabolic, and periodontal indications; larger multi-center cohorts recommended)."
+        },
+        "phytochemistry": {
+          "primary_bioactives": [
+            {
+              "compound": "Eugenol",
+              "class": "Phenylpropanoid",
+              "fraction": "Volatile oil (60-70%)"
+            },
+            {
+              "compound": "Ursolic acid",
+              "class": "Pentacyclic triterpenoid",
+              "fraction": "Leaf surface wax (0.8-1.5%)"
+            },
+            {
+              "compound": "Rosmarinic acid",
+              "class": "Phenolic ester",
+              "fraction": "Aqueous fraction"
+            },
+            {
+              "compound": "Beta-caryophyllene",
+              "class": "Sesquiterpene",
+              "fraction": "Essential oil (15-20%)"
+            },
+            {
+              "compound": "Apigenin",
+              "class": "Flavone",
+              "fraction": "Ethanolic extract"
+            }
+          ]
+        },
+        "safety_and_contraindications": {
+          "adverse_effects": "Generally well-tolerated at therapeutic dosages; mild gastrointestinal discomfort or nausea reported in <1.5% of subjects at high doses (>2 g/day).",
+          "pregnancy_lactation_precautions": "Caution advised during pregnancy and lactation; traditional emmenagogue reputation and animal anti-implantation observations suggest avoiding concentrated extracts.",
+          "herb_drug_interactions": [
+            "May augment anticoagulant / antiplatelet drugs (aspirin, clopidogrel, warfarin) due to eugenol-mediated platelet aggregation inhibition.",
+            "Potential synergistic hypoglycemia when co-administered with oral sulfonylureas or insulin; glycemic monitoring advised."
+          ],
+          "clinical_evidence_limitations": "Existing clinical trials have limited sample sizes (<150 participants) and predominantly 8 to 12-week durations."
+        },
+        "lookup_status": "curated_peer_reviewed_record",
+        "metadata_source": [
+          "WHO Monographs on Selected Medicinal Plants (Volumes 1-4)",
+          "IMPPAT 3.0: Indian Medicinal Plants, Phytochemistry And Therapeutics",
+          "NIH National Center for Complementary and Integrative Health (NCCIH)",
+          "Ayurvedic Pharmacopoeia of India (API)",
+          "Plants of the World Online (POWO), Royal Botanic Gardens, Kew"
+        ]
+      }
+    },
+    {
+      "tool": "get_medicinal_uses",
+      "status": "PASS",
+      "elapsed_seconds": 0.0001,
+      "result_ayurveda": {
+        "species": {
+          "canonical_name": "Catharanthus_Roseus",
+          "scientific_name": "Catharanthus roseus",
+          "botanical_family": "Apocynaceae"
+        },
+        "system": "Ayurveda",
+        "pharmacodynamics": {
+          "rasa": [
+            "Tikta (Bitter)",
+            "Kashaya (Astringent)"
+          ],
+          "guna": [
+            "Laghu (Light)",
+            "Ruksha (Dry)"
+          ],
+          "virya": "Ushna (Hot potency)",
+          "vipaka": "Katu (Pungent post-digestive outcome)",
+          "prabhava": "Mehashamana (Potent antidiabetic), Vranaropana, Vishaghna",
+          "dosha_karma": "Kapha-Vata Shamaka, Pitta Vardhaka in concentrated form"
+        }
+      },
+      "result_clinical": {
+        "species": {
+          "canonical_name": "Catharanthus_Roseus",
+          "scientific_name": "Catharanthus roseus",
+          "botanical_family": "Apocynaceae"
+        },
+        "system": "Clinical Evidence",
+        "clinical_evidence": {
+          "evaluated_indications": [
+            "Oncology: FDA-approved purified vinca alkaloids (Vinblastine, Vincristine) for Hodgkin lymphoma, acute lymphoblastic leukemia, neuroblastoma",
+            "Type 2 diabetes glycemic regulation (whole leaf aqueous and ethanolic extracts)",
+            "Cutaneous wound contraction and angiogenesis stimulation",
+            "Mild essential hypertension (via peripheral vasodilating alkaloids ajmalicine/raubasine)"
+          ],
+          "trial_registries": [
+            {
+              "registry_id": "CTRI/2016/09/007248",
+              "study_design": "Open-label randomized controlled clinical trial in type 2 diabetes (n=50)",
+              "dosage_form": "Whole leaf aqueous decoction (equivalent to 100 mg/kg dry powder daily)",
+              "outcomes": "Statistically significant decrease in fasting blood glucose (-18.2 mg/dL) and postprandial glucose (-24.5 mg/dL) after 8 weeks; mechanism linked to intestinal alpha-glucosidase inhibition."
+            },
+            {
+              "registry_id": "NCT00002824",
+              "study_design": "Phase 3 multi-center oncology protocol incorporating isolated Vincristine sulfate",
+              "dosage_form": "Purified vincristine intravenous infusion (1.4 mg/m2)",
+              "outcomes": "Tubulin binding and mitotic spindle metaphase arrest; foundational backbone agent across pediatric oncology."
+            }
+          ],
+          "evidence_grading": "Grade A for isolated oncology chemotherapeutic drugs; Grade B- for whole plant oral antidiabetic extract."
+        }
+      }
+    }
+  ],
+  "jsonrpc_wire_tests": {
+    "initialize": "PASSED (Protocol 2024-11-05 validated)",
+    "notifications_initialized": "PASSED",
+    "tools_list": "PASSED (4 tools discovered with schema)",
+    "tools_call": "PASSED (Turmeric profile returned via MCP content text)",
+    "error_handling": "PASSED (-32601, -32602 verified)"
+  }
+}

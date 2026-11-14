@@ -1,0 +1,262 @@
+{
+  "status": "PHASE_8_COMPLETE_AND_VERIFIED",
+  "dual_branch_architecture": {
+    "cnn_branch": "MobileNetV2 (terminal features[-1] conv)",
+    "vit_branch": "Vision Transformer (6 blocks, 6 heads, dim=384)",
+    "fusion_module": "Bilinear Concatenation with LayerNorm (512-dim)"
+  },
+  "xai_suite": {
+    "cnn_grad_cam": "Gradient-weighted Class Activation Mapping",
+    "vit_attention_rollout": "Abnar & Zuidema (2020) Layerwise Rollout",
+    "hybrid_saliency_formula": "S_hybrid = 0.5 * S_gradcam + 0.5 * S_rollout",
+    "anatomical_focus_score_formula": "AFS = sum(S_hybrid * M_plant) / sum(S_hybrid) * 100",
+    "xai_benchmarks": [
+      {
+        "sample_tag": "sample1_tulsi",
+        "ground_truth_species": "Tulsi",
+        "ground_truth_organ": "general",
+        "predicted_species": "Tulsi",
+        "predicted_species_conf": 0.9972,
+        "predicted_organ": "general",
+        "predicted_organ_conf": 1.0,
+        "anatomical_focus_score": 50.36,
+        "diagnostic_plot_path": "reports/xai_diagnostics/sample1_tulsi_xai_diagnostic.png"
+      },
+      {
+        "sample_tag": "sample2_aloe_vera",
+        "ground_truth_species": "Aloe_Vera",
+        "ground_truth_organ": "general",
+        "predicted_species": "Aloe_Vera",
+        "predicted_species_conf": 0.9966,
+        "predicted_organ": "general",
+        "predicted_organ_conf": 1.0,
+        "anatomical_focus_score": 61.72,
+        "diagnostic_plot_path": "reports/xai_diagnostics/sample2_aloe_vera_xai_diagnostic.png"
+      },
+      {
+        "sample_tag": "sample3_catharanthus",
+        "ground_truth_species": "Catharanthus_Roseus",
+        "ground_truth_organ": "leaf",
+        "predicted_species": "Catharanthus_Roseus",
+        "predicted_species_conf": 0.9997,
+        "predicted_organ": "leaf",
+        "predicted_organ_conf": 1.0,
+        "anatomical_focus_score": 39.21,
+        "diagnostic_plot_path": "reports/xai_diagnostics/sample3_catharanthus_xai_diagnostic.png"
+      }
+    ]
+  },
+  "uncertainty_engine": {
+    "confidence_threshold": 0.6,
+    "entropy_threshold": 0.45,
+    "entropy_formula": "H_norm = - (1 / ln(K)) * sum(p_i * ln(p_i + 1e-12))",
+    "routing_rule": "IF C < 0.60 OR H_norm > 0.45 -> Route to Pl@ntNet API Fallback ELSE Local Model",
+    "routing_benchmarks": [
+      {
+        "test_case": "real_image_Tulsi",
+        "source": "local_hybrid_model",
+        "is_uncertain": false,
+        "routing_reason": "Decision confident: Top-1 Confidence (0.9972) >= 0.6 and Normalized Entropy (0.0031) <= 0.45",
+        "uncertainty_metrics": {
+          "top1_confidence": 0.9972,
+          "normalized_entropy": 0.0031,
+          "confidence_threshold": 0.6,
+          "entropy_threshold": 0.45,
+          "is_low_confidence": false,
+          "is_high_entropy": false
+        },
+        "local_prediction": {
+          "species": "Tulsi",
+          "species_idx": 1173,
+          "confidence": 0.9972,
+          "organ": "general",
+          "organ_idx": 2,
+          "organ_confidence": 1.0,
+          "top5_candidates": [
+            {
+              "species": "Tulsi",
+              "species_idx": 1173,
+              "confidence": 0.9972
+            },
+            {
+              "species": "Tomato",
+              "species_idx": 1108,
+              "confidence": 0.002
+            },
+            {
+              "species": "Aloe_Vera",
+              "species_idx": 80,
+              "confidence": 0.0004
+            },
+            {
+              "species": "Neem",
+              "species_idx": 761,
+              "confidence": 0.0004
+            },
+            {
+              "species": "Ginger",
+              "species_idx": 486,
+              "confidence": 0.0
+            }
+          ]
+        },
+        "fallback_engaged": false
+      },
+      {
+        "test_case": "real_image_Aloe_Vera",
+        "source": "local_hybrid_model",
+        "is_uncertain": false,
+        "routing_reason": "Decision confident: Top-1 Confidence (0.9966) >= 0.6 and Normalized Entropy (0.0040) <= 0.45",
+        "uncertainty_metrics": {
+          "top1_confidence": 0.9966,
+          "normalized_entropy": 0.004,
+          "confidence_threshold": 0.6,
+          "entropy_threshold": 0.45,
+          "is_low_confidence": false,
+          "is_high_entropy": false
+        },
+        "local_prediction": {
+          "species": "Aloe_Vera",
+          "species_idx": 80,
+          "confidence": 0.9966,
+          "organ": "general",
+          "organ_idx": 2,
+          "organ_confidence": 1.0,
+          "top5_candidates": [
+            {
+              "species": "Aloe_Vera",
+              "species_idx": 80,
+              "confidence": 0.9966
+            },
+            {
+              "species": "Neem",
+              "species_idx": 761,
+              "confidence": 0.0014
+            },
+            {
+              "species": "Ginger",
+              "species_idx": 486,
+              "confidence": 0.0009
+            },
+            {
+              "species": "Tulsi",
+              "species_idx": 1173,
+              "confidence": 0.0009
+            },
+            {
+              "species": "Alocasia_Zebrina",
+              "species_idx": 79,
+              "confidence": 0.0
+            }
+          ]
+        },
+        "fallback_engaged": false
+      },
+      {
+        "test_case": "real_image_Catharanthus_Roseus",
+        "source": "local_hybrid_model",
+        "is_uncertain": false,
+        "routing_reason": "Decision confident: Top-1 Confidence (0.9997) >= 0.6 and Normalized Entropy (0.0004) <= 0.45",
+        "uncertainty_metrics": {
+          "top1_confidence": 0.9997,
+          "normalized_entropy": 0.0004,
+          "confidence_threshold": 0.6,
+          "entropy_threshold": 0.45,
+          "is_low_confidence": false,
+          "is_high_entropy": false
+        },
+        "local_prediction": {
+          "species": "Catharanthus_Roseus",
+          "species_idx": 244,
+          "confidence": 0.9997,
+          "organ": "leaf",
+          "organ_idx": 0,
+          "organ_confidence": 1.0,
+          "top5_candidates": [
+            {
+              "species": "Catharanthus_Roseus",
+              "species_idx": 244,
+              "confidence": 0.9997
+            },
+            {
+              "species": "Hibiscus",
+              "species_idx": 529,
+              "confidence": 0.0003
+            },
+            {
+              "species": "Alcea_Rosea",
+              "species_idx": 63,
+              "confidence": 0.0
+            },
+            {
+              "species": "Ashwagandha",
+              "species_idx": 160,
+              "confidence": 0.0
+            },
+            {
+              "species": "Alocasia_Reginula",
+              "species_idx": 76,
+              "confidence": 0.0
+            }
+          ]
+        },
+        "fallback_engaged": false
+      },
+      {
+        "test_case": "synthetic_ood_noise",
+        "source": "plantnet_offline_simulator",
+        "is_uncertain": true,
+        "routing_reason": "Uncertainty triggered: Confidence 0.0093 < 0.6 & Normalized Entropy 0.9966 > 0.45. Routed to Pl@ntNet fallback.",
+        "uncertainty_metrics": {
+          "top1_confidence": 0.0093,
+          "normalized_entropy": 0.9966,
+          "confidence_threshold": 0.6,
+          "entropy_threshold": 0.45,
+          "is_low_confidence": true,
+          "is_high_entropy": true
+        },
+        "local_prediction": {
+          "species": "Neem",
+          "species_idx": 761,
+          "confidence": 0.0093,
+          "organ": "bark",
+          "organ_idx": 4,
+          "organ_confidence": 0.9926,
+          "top5_candidates": [
+            {
+              "species": "Neem",
+              "species_idx": 761,
+              "confidence": 0.0093
+            },
+            {
+              "species": "Acacia_Saligna",
+              "species_idx": 29,
+              "confidence": 0.0034
+            },
+            {
+              "species": "Acacia_Heterophylla",
+              "species_idx": 14,
+              "confidence": 0.0026
+            },
+            {
+              "species": "Aeschynomene_Americana",
+              "species_idx": 58,
+              "confidence": 0.0023
+            },
+            {
+              "species": "Alocasia_Wentii",
+              "species_idx": 78,
+              "confidence": 0.002
+            }
+          ]
+        },
+        "fallback_engaged": true
+      }
+    ],
+    "confident_branch_test": {
+      "mock_confidence": 0.945,
+      "mock_normalized_entropy": 0.03,
+      "verified_local_routing": true
+    }
+  }
+}

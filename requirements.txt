@@ -1,0 +1,10 @@
+# Core Deep Learning & Computer Vision
+torch>=2.0.0
+torchvision>=0.15.0
+numpy>=1.24.0
+pillow>=9.5.0
+matplotlib>=3.7.0
+
+# Optional Web Interface (runs built-in zero-dependency web dashboard if omitted)
+gradio>=4.0.0
+
