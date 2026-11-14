@@ -11,8 +11,16 @@ __pycache__/
 *.so
 .pytest_cache/
 
-# Large model weights (>100MB exceeds GitHub hard limit)
-checkpoints/*.pth
+# Large training checkpoints and backups (>100MB exceeds GitHub hard limit)
+checkpoints/best_model_full.pth
+checkpoints/*_backup.pth
+checkpoints/last_checkpoint.pth
+
+# Track production inference weights (67.8 MB - within GitHub 100MB limit)
+!checkpoints/best_model.pth
+
+# Sample demonstration images are explicitly tracked
+!assets/sample_images/*
 
 # Large raw and processed datasets (>50GB)
 dataset/*/
@@ -41,3 +49,4 @@ Turmeric Plant Disease*
 Thumbs.db
 reports/pipeline_runs/*.jpg
 reports/pipeline_runs/*.png
+

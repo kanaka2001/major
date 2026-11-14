@@ -41,9 +41,15 @@ def main():
 
     server = MedicinalPlantsMCPServer()
 
-    test_tulsi = "dataset/Tulsi/general/Tulsi_general_00053.jpg"
-    test_aloe = "dataset/Aloe_Vera/general/Aloe_Vera_general_00206.jpg"
-    test_catharanthus = "dataset/Catharanthus_Roseus/leaf/Catharanthus_Roseus_leaf_00151.jpg"
+    def resolve_sample(asset_rel, fallback_rel):
+        p1 = os.path.join(workspace_root, asset_rel)
+        if os.path.exists(p1):
+            return asset_rel
+        return fallback_rel
+
+    test_tulsi = resolve_sample("assets/sample_images/tulsi.jpg", "dataset/Tulsi/general/Tulsi_general_00053.jpg")
+    test_aloe = resolve_sample("assets/sample_images/aloe_vera.jpg", "dataset/Aloe_Vera/general/Aloe_Vera_general_00206.jpg")
+    test_catharanthus = resolve_sample("assets/sample_images/periwinkle.jpg", "dataset/Catharanthus_Roseus/leaf/Catharanthus_Roseus_leaf_00151.jpg")
 
     assert os.path.exists(os.path.join(workspace_root, test_tulsi)), f"Missing test sample: {test_tulsi}"
     assert os.path.exists(os.path.join(workspace_root, test_aloe)), f"Missing test sample: {test_aloe}"

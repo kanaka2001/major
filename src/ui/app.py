@@ -307,10 +307,10 @@ def build_gradio_blocks():
         return banner_html, plot_path, afs_str, tax_html, ayur_html, clin_html, phyto_html, raw_json
 
     # Pre-configure sample images if they exist
-    sample_tulsi = os.path.join(WORKSPACE_ROOT, "dataset/Tulsi/general/Tulsi_general_00053.jpg")
-    sample_aloe = os.path.join(WORKSPACE_ROOT, "dataset/Aloe_Vera/general/Aloe_Vera_general_00206.jpg")
-    sample_cath = os.path.join(WORKSPACE_ROOT, "dataset/Catharanthus_Roseus/leaf/Catharanthus_Roseus_leaf_00151.jpg")
-    sample_tomato = os.path.join(WORKSPACE_ROOT, "dataset/Tomato/general/Tomato_general_00019.jpg")
+    sample_tulsi = os.path.join(WORKSPACE_ROOT, "assets/sample_images/tulsi.jpg")
+    sample_aloe = os.path.join(WORKSPACE_ROOT, "assets/sample_images/aloe_vera.jpg")
+    sample_cath = os.path.join(WORKSPACE_ROOT, "assets/sample_images/periwinkle.jpg")
+    sample_tomato = os.path.join(WORKSPACE_ROOT, "assets/sample_images/tomato.jpg")
 
     examples_list = []
     for s_path, hint in [(sample_tulsi, "General"), (sample_aloe, "General"), (sample_cath, "Leaf"), (sample_tomato, "General")]:
@@ -487,10 +487,10 @@ DASHBOARD_HTML = """<!DOCTYPE html>
 
         <p style="font-size: 12px; color: var(--text-muted); margin-bottom: 6px;">Or test with verified partition samples:</p>
         <div class="samples">
-          <button class="sample-btn" onclick="loadSample('dataset/Tulsi/general/Tulsi_general_00053.jpg', 'Tulsi')">Tulsi (Sample 1)</button>
-          <button class="sample-btn" onclick="loadSample('dataset/Aloe_Vera/general/Aloe_Vera_general_00206.jpg', 'Aloe Vera')">Aloe Vera (Sample 2)</button>
-          <button class="sample-btn" onclick="loadSample('dataset/Catharanthus_Roseus/leaf/Catharanthus_Roseus_leaf_00151.jpg', 'Catharanthus')">Periwinkle (Sample 3)</button>
-          <button class="sample-btn" onclick="loadSample('dataset/Tomato/general/Tomato_general_00019.jpg', 'Tomato')">Tomato (Sample 4)</button>
+          <button class="sample-btn" onclick="loadSample('assets/sample_images/tulsi.jpg', 'Tulsi')">Tulsi (Sample 1)</button>
+          <button class="sample-btn" onclick="loadSample('assets/sample_images/aloe_vera.jpg', 'Aloe Vera')">Aloe Vera (Sample 2)</button>
+          <button class="sample-btn" onclick="loadSample('assets/sample_images/periwinkle.jpg', 'Catharanthus')">Periwinkle (Sample 3)</button>
+          <button class="sample-btn" onclick="loadSample('assets/sample_images/tomato.jpg', 'Tomato')">Tomato (Sample 4)</button>
         </div>
 
         <div class="form-group" style="margin-top: 16px;">
@@ -590,7 +590,7 @@ DASHBOARD_HTML = """<!DOCTYPE html>
 
   <script>
     let selectedImageFile = null;
-    let selectedSamplePath = "dataset/Tulsi/general/Tulsi_general_00053.jpg";
+    let selectedSamplePath = "assets/sample_images/tulsi.jpg";
 
     function handleFileSelect(evt) {
       const file = evt.target.files[0];

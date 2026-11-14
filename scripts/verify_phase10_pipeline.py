@@ -41,24 +41,30 @@ def main():
     output_dir = os.path.join(workspace_root, "reports", "pipeline_runs")
     os.makedirs(output_dir, exist_ok=True)
 
+    def resolve_sample(asset_rel, fallback_rel):
+        p1 = os.path.join(workspace_root, asset_rel)
+        if os.path.exists(p1):
+            return p1
+        return os.path.join(workspace_root, fallback_rel)
+
     test_samples = [
         {
             "tag": "sample1_tulsi",
             "name": "Tulsi",
             "part": "general",
-            "path": os.path.join(workspace_root, "dataset/Tulsi/general/Tulsi_general_00053.jpg")
+            "path": resolve_sample("assets/sample_images/tulsi.jpg", "dataset/Tulsi/general/Tulsi_general_00053.jpg")
         },
         {
             "tag": "sample2_aloe",
             "name": "Aloe_Vera",
             "part": "general",
-            "path": os.path.join(workspace_root, "dataset/Aloe_Vera/general/Aloe_Vera_general_00206.jpg")
+            "path": resolve_sample("assets/sample_images/aloe_vera.jpg", "dataset/Aloe_Vera/general/Aloe_Vera_general_00206.jpg")
         },
         {
             "tag": "sample3_catharanthus",
             "name": "Catharanthus_Roseus",
             "part": "leaf",
-            "path": os.path.join(workspace_root, "dataset/Catharanthus_Roseus/leaf/Catharanthus_Roseus_leaf_00151.jpg")
+            "path": resolve_sample("assets/sample_images/periwinkle.jpg", "dataset/Catharanthus_Roseus/leaf/Catharanthus_Roseus_leaf_00151.jpg")
         }
     ]
 

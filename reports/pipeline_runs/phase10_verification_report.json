@@ -1,6 +1,6 @@
 {
   "status": "PHASE_10_COMPLETE_AND_VERIFIED",
-  "timestamp": "2026-11-14 04:12:36 UTC",
+  "timestamp": "2026-11-14 04:59:27 UTC",
   "vtu_project_title": "Intelligent Medicinal Plant Recognition Using a Hybrid CNN\u2013ViT Architecture, Explainable AI, and an MCP-Based Knowledge System",
   "orchestration_pipeline": {
     "entrypoint": "src/pipeline/orchestrator.py:analyze_medicinal_plant",
@@ -30,7 +30,7 @@
   "benchmark_runs": [
     {
       "test_case": "sample1_tulsi",
-      "image_path": "dataset/Tulsi/general/Tulsi_general_00053.jpg",
+      "image_path": "assets/sample_images/tulsi.jpg",
       "ground_truth": "Tulsi",
       "organ_hint": "general",
       "result": {
@@ -85,8 +85,8 @@
         "explainable_ai": {
           "anatomical_focus_score": 50.36,
           "afs_percentage": "50.36%",
-          "diagnostic_plot_path": "reports/pipeline_runs/pipe_Tulsi_general_00053_1794629551_xai_diagnostic.png",
-          "diagnostic_plot_absolute_path": "/home/madhu/Downloads/zip/reports/pipeline_runs/pipe_Tulsi_general_00053_1794629551_xai_diagnostic.png",
+          "diagnostic_plot_path": "reports/pipeline_runs/pipe_tulsi_1794632363_xai_diagnostic.png",
+          "diagnostic_plot_absolute_path": "/home/madhu/Downloads/zip/reports/pipeline_runs/pipe_tulsi_1794632363_xai_diagnostic.png",
           "interpretability_narrative": {
             "cnn_grad_cam": "Visualizes fine-grained micro-textures (leaf venation, margin dentation, trichomes) activating terminal conv layer.",
             "vit_attention_rollout": "Visualizes macroscopic organ morphology and spatial global contours via 6-layer Transformer attention rollout.",
@@ -226,18 +226,18 @@
           "safety_advisory": "Caution advised during pregnancy and lactation; traditional emmenagogue reputation and animal anti-implantation observations suggest avoiding concentrated extracts."
         },
         "latency_profile": {
-          "preprocessing_ms": 1.99,
-          "model_inference_ms": 41.8,
-          "xai_generation_ms": 976.47,
-          "knowledge_retrieval_ms": 0.15,
-          "total_latency_ms": 1020.43,
-          "total_latency_seconds": 1.02
+          "preprocessing_ms": 1.9,
+          "model_inference_ms": 46.63,
+          "xai_generation_ms": 1056.0,
+          "knowledge_retrieval_ms": 0.14,
+          "total_latency_ms": 1104.68,
+          "total_latency_seconds": 1.105
         }
       }
     },
     {
       "test_case": "sample2_aloe",
-      "image_path": "dataset/Aloe_Vera/general/Aloe_Vera_general_00206.jpg",
+      "image_path": "assets/sample_images/aloe_vera.jpg",
       "ground_truth": "Aloe_Vera",
       "organ_hint": "general",
       "result": {
@@ -292,8 +292,8 @@
         "explainable_ai": {
           "anatomical_focus_score": 61.72,
           "afs_percentage": "61.72%",
-          "diagnostic_plot_path": "reports/pipeline_runs/pipe_Aloe_Vera_general_00206_1794629552_xai_diagnostic.png",
-          "diagnostic_plot_absolute_path": "/home/madhu/Downloads/zip/reports/pipeline_runs/pipe_Aloe_Vera_general_00206_1794629552_xai_diagnostic.png",
+          "diagnostic_plot_path": "reports/pipeline_runs/pipe_aloe_vera_1794632364_xai_diagnostic.png",
+          "diagnostic_plot_absolute_path": "/home/madhu/Downloads/zip/reports/pipeline_runs/pipe_aloe_vera_1794632364_xai_diagnostic.png",
           "interpretability_narrative": {
             "cnn_grad_cam": "Visualizes fine-grained micro-textures (leaf venation, margin dentation, trichomes) activating terminal conv layer.",
             "vit_attention_rollout": "Visualizes macroscopic organ morphology and spatial global contours via 6-layer Transformer attention rollout.",
@@ -432,18 +432,18 @@
           "safety_advisory": "Oral aloe latex is ABSOLUTELY CONTRAINDICATED in pregnancy (potent emmenagogue / oxytocic stimulant inducing uterine contraction) and lactation (aloin excretion into breast milk)."
         },
         "latency_profile": {
-          "preprocessing_ms": 1.47,
-          "model_inference_ms": 34.87,
-          "xai_generation_ms": 960.07,
+          "preprocessing_ms": 1.48,
+          "model_inference_ms": 37.78,
+          "xai_generation_ms": 979.75,
           "knowledge_retrieval_ms": 0.12,
-          "total_latency_ms": 996.55,
-          "total_latency_seconds": 0.997
+          "total_latency_ms": 1019.16,
+          "total_latency_seconds": 1.019
         }
       }
     },
     {
       "test_case": "sample3_catharanthus",
-      "image_path": "dataset/Catharanthus_Roseus/leaf/Catharanthus_Roseus_leaf_00151.jpg",
+      "image_path": "assets/sample_images/periwinkle.jpg",
       "ground_truth": "Catharanthus_Roseus",
       "organ_hint": "leaf",
       "result": {
@@ -498,8 +498,8 @@
         "explainable_ai": {
           "anatomical_focus_score": 39.21,
           "afs_percentage": "39.21%",
-          "diagnostic_plot_path": "reports/pipeline_runs/pipe_Catharanthus_Roseus_leaf_00151_1794629553_xai_diagnostic.png",
-          "diagnostic_plot_absolute_path": "/home/madhu/Downloads/zip/reports/pipeline_runs/pipe_Catharanthus_Roseus_leaf_00151_1794629553_xai_diagnostic.png",
+          "diagnostic_plot_path": "reports/pipeline_runs/pipe_periwinkle_1794632365_xai_diagnostic.png",
+          "diagnostic_plot_absolute_path": "/home/madhu/Downloads/zip/reports/pipeline_runs/pipe_periwinkle_1794632365_xai_diagnostic.png",
           "interpretability_narrative": {
             "cnn_grad_cam": "Visualizes fine-grained micro-textures (leaf venation, margin dentation, trichomes) activating terminal conv layer.",
             "vit_attention_rollout": "Visualizes macroscopic organ morphology and spatial global contours via 6-layer Transformer attention rollout.",
@@ -637,12 +637,12 @@
           "safety_advisory": "ABSOLUTELY CONTRAINDICATED in pregnancy (potent teratogen and abortifacient) and lactation."
         },
         "latency_profile": {
-          "preprocessing_ms": 1.36,
-          "model_inference_ms": 39.65,
-          "xai_generation_ms": 987.74,
-          "knowledge_retrieval_ms": 0.11,
-          "total_latency_ms": 1028.87,
-          "total_latency_seconds": 1.029
+          "preprocessing_ms": 1.4,
+          "model_inference_ms": 39.34,
+          "xai_generation_ms": 1018.97,
+          "knowledge_retrieval_ms": 0.1,
+          "total_latency_ms": 1059.82,
+          "total_latency_seconds": 1.06
         }
       }
     },
@@ -832,11 +832,11 @@
           "safety_advisory": "Leaf preparations are beneficial galactagogues in lactation; however, ROOT and BARK extracts are STRICTLY CONTRAINDICATED in pregnancy (contain spirochin alkaloids with abortifacient and uterine contracting activity)."
         },
         "latency_profile": {
-          "preprocessing_ms": 0.91,
-          "model_inference_ms": 39.17,
+          "preprocessing_ms": 0.87,
+          "model_inference_ms": 38.51,
           "xai_generation_ms": 0.0,
-          "knowledge_retrieval_ms": 0.16,
-          "total_latency_ms": 40.26,
+          "knowledge_retrieval_ms": 0.13,
+          "total_latency_ms": 39.52,
           "total_latency_seconds": 0.04
         }
       }
